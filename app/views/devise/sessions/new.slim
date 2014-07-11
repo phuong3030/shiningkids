@@ -1,0 +1,37 @@
+= content_for :sub_page_header
+	meta content=("text/html; charset=utf-8") http-equiv="Content-Type" /
+	meta content="width=device-width, initial-scale=1.0" name="viewport" /
+	= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+	= stylesheet_link_tag    'admin/login', media: 'all', 'data-turbolinks-track' => true
+	title Metro Style Admin Template - shared
+
+= content_for :main_content
+	.loginpanel
+		.loginpanelinner
+			.logo.animate0.bounceIn
+				img alt="admin logo" src="/images/admin-logo.png" /
+			= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+  				= devise_error_messages!
+				.inputwrapper.login-alert
+					.alert.alert-error Invalid username or password
+
+				.inputwrapper.animate1.bounceIn
+					= f.email_field :email, :placeholder => "Enter email"
+
+				.inputwrapper.animate2.bounceIn
+					= f.password_field :password, :placeholder => "Enter password"
+
+				.inputwrapper.animate3.bounceIn
+					= button_tag "Sign In"
+
+				.inputwrapper.animate4.bounceIn
+					label
+						= f.check_box :remember_me 
+						span Keep me sign in
+
+		/! loginpanelinner
+
+	/! loginpanel
+	
+	.loginfooter
+		p &copy; 2013. Admin Template. All Rights Reserved.

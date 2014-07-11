@@ -1,0 +1,114 @@
+/*
+ * Login page style
+ * 
+ * Features:
+ * - Bound animation for label and input
+ *
+ *= require font/roboto
+ *= require animate/animate.min
+ *= require admin/shared/animate.delay
+ */
+body {
+	background: #0866c6;
+	font-size: 12px;
+	font-family: 'RobotoRegular', Helvetica, sans-serif;
+}
+
+.loginpanel {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	height: 300px;
+
+	.loginpanelinner {
+		position: relative;
+		top: -150px;
+		left: -50%;
+
+		.logo {
+			text-align: center;
+			padding: 20px 0;
+
+			img {
+				width: 270px;
+			}
+		}
+
+		.inputwrapper {
+			line-height: 20px;
+
+			input {
+				border: 0;
+				padding: 10px;
+				margin-bottom: 10px;
+				background: #fff;
+				width: 100%;
+
+				&:active, &:focus {
+					background: #fff;
+					border: 0;
+				}
+			}
+
+			button {
+				display: block;
+				border: 1px solid #0c57a3;
+				padding: 10px;
+				background: #0972dd;
+				width: 100%;
+				color: #fff;
+				text-transform: uppercase;
+
+				&:focus, &:active, &:hover {
+					background: #1e82e8;
+				}
+			}
+
+
+			label {
+				display: inline-block;
+				margin-top: 10px;
+				color: rgba(255,255,255,0.8);
+				font-size: 11px;
+				vertical-align: middle;
+
+				input {
+					width: auto;
+					margin: -3px 5px 0 0;
+					vertical-align: middle;
+				}
+			}
+
+			&.login-alert {
+				display: none;
+
+				.alert {
+					font-size: 11px;
+					text-align: center;
+					padding: 5px 0;
+					border: 0;
+				}
+			}
+
+			.remember {
+				padding: 0;
+				background: none;
+			}
+		}
+
+	}
+}
+
+.loginfooter {
+	font-size: 11px;
+	color: rgba(255,255,255,0.5);
+	line-height: 21px;
+	position: absolute;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	text-align: center;
+	font-family: arial, sans-serif !important;
+	padding: 5px 0;
+}
