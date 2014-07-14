@@ -5,6 +5,9 @@ gem 'rails', '4.1.4'
 gem 'jquery-rails'
 
 gem 'turbolinks'
+
+gem 'therubyracer'
+gem 'execjs'
 	
 gem 'sass-rails', '~> 4.0.3'
 
@@ -24,6 +27,8 @@ gem 'paperclip'
 gem 'slim'
 
 gem 'bootstrap-sass'
+
+gem 'comfortable_mexican_sofa', '~> 1.12.0'
 
 group :development do 
 	gem 'spring'
