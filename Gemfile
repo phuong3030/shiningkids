@@ -4,14 +4,13 @@ gem 'rails', '4.1.4'
 
 gem 'jquery-rails'
 
-gem 'turbolinks'
+gem 'therubyracer'
+gem 'execjs'
 	
 gem 'sass-rails', '~> 4.0.3'
 
 gem 'sprockets'
 gem 'sprockets-sass'
-
-gem 'devise'
 
 gem 'cancan'
 
@@ -24,6 +23,9 @@ gem 'paperclip'
 gem 'slim'
 
 gem 'bootstrap-sass'
+
+gem 'alchemy-devise', github: 'magiclabs/alchemy-devise', branch: 'master'
+gem 'alchemy_cms', github: 'magiclabs/alchemy_cms', branch: 'master'
 
 group :development do 
 	gem 'spring'
