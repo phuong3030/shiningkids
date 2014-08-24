@@ -15,6 +15,10 @@
     = f.label :description
     br
       = f.text_field :description
+  .field
+    = f.label :image
+    br
+      = f.file_field :image, :class => 'btn', :class => 'form-control'
   .actions
     = f.submit
 

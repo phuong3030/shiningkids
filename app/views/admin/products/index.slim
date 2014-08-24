@@ -1,0 +1,24 @@
+- content_for :main_content
+  h1 Listing products
+  table.table
+    thead
+      tr
+        th Name
+        th Price
+        th Saleoff
+        th Description
+        th colspan="3" 
+    tbody
+      - @products.each do |product|
+        tr
+          td= product.name
+          td= product.price
+          td= product.saleoff
+          td= product.description
+          td= link_to 'Show', admin_category_product_path(@category_id, product)
+          td= link_to 'Edit', edit_admin_category_product_path(@category_id, product)
+          td= link_to 'Destroy', admin_category_product_path(@category_id, product), method: :delete, data: { :confirm => 'Are you sure?' }
+  br
+    = link_to 'New Product', new_admin_category_product_path(:category_id => @category_id)
+    |\ #{link_to 'Back', admin_categories_path }
+

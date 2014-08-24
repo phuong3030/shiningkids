@@ -1,0 +1,17 @@
+- content_for :main_content
+  p#notice= notice
+  p
+    strong Name:
+    = @product.name
+  p
+    strong Price:
+    = @product.price
+  p
+    strong Saleoff:
+    = @product.saleoff
+  p
+    strong Description:
+    = @product.description
+  = link_to 'Edit', edit_admin_category_product_path(@category_id, @product)
+  |\ #{link_to 'Back', admin_category_products_path(@category_id) }
+
