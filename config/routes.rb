@@ -1,7 +1,13 @@
 Rails.application.routes.draw do
-	devise_for :admins, :skip => [:registration] 
+  namespace :admin do
+    resources :categories
+  end
 
-	scope :module => :home, :shallow_path => "home" do
-		root :to => "home#index"
+	devise_for :customer 
+	devise_for :admin, :skip => [:registrations] 
+
+	scope :module => :home do
+    root :to => "home#index"
 	end
+
 end

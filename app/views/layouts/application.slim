@@ -2,9 +2,10 @@ doctype html
 html
 	head
 		title Shiningkids
-		= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
-		= yield :sub_page_header
+		= stylesheet_link_tag 'application', media: 'all'
+		= yield :page_header
 		= csrf_meta_tags
 	body
 		= yield :main_content
-		= javascript_include_tag 'application', 'data-turbolinks-track' => true
+		= javascript_include_tag 'application'
+		= yield :page_footer

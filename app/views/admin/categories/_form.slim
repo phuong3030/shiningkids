@@ -1,0 +1,20 @@
+= form_for @admin_category, :url => url, :method => method do |f|
+  - if @admin_category.errors.any?
+    #error_explanation
+      h2
+        = pluralize(@admin_category.errors.count, "error")
+        | prohibited this admin_category from being saved:
+      ul
+        - @admin_category.errors.full_messages.each do |message|
+          li= message
+  .field
+    = f.label :name
+    br
+      = f.text_field :name
+  .field
+    = f.label :description
+    br
+      = f.text_field :description
+  .actions
+    = f.submit
+

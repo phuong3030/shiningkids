@@ -3,10 +3,8 @@ source 'https://rubygems.org'
 gem 'rails', '4.1.4'
 
 gem 'jquery-rails'
-
-gem 'turbolinks'
 	
-gem 'sass-rails', '~> 4.0.3'
+gem 'sass-rails'
 
 gem 'sprockets'
 gem 'sprockets-sass'
@@ -17,13 +15,11 @@ gem 'cancan'
 
 gem 'kaminari'
 
-gem 'font-awesome-sass'
-
 gem 'paperclip'
 
-gem 'slim'
-
 gem 'bootstrap-sass'
+
+gem 'slim'
 
 group :development do 
 	gem 'spring'
@@ -31,8 +27,9 @@ group :development do
 	gem 'pry'
 end
 
-group :deployment do 
-# gem 'unicorn'
+group :production do 
+  gem 'thin'
+# gem 'pg'
 # gem 'capistrano-rails'
 # gem 'uglifier', '>= 1.3.0'
 end
