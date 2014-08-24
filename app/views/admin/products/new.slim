@@ -1,0 +1,5 @@
+- content_for :main_content
+  h1 New product
+  = render 'form', :url => admin_category_products_path(:category_id => @category_id), :method => :post
+  = link_to 'Back', admin_category_products_path(:category_id => @category_id)
+

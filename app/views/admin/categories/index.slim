@@ -1,16 +1,20 @@
 - content_for :main_content
   h1 Listing admin_categories
-  table
+  table.table
     thead
       tr
+        th Image
         th Name
         th Description
+        th List fo products
         th colspan="3" 
     tbody
       - @admin_categories.each do |admin_category|
         tr
+          td= image_tag admin_category.image.url, :class => 'img-responsive'
           td= admin_category.name
           td= admin_category.description
+          td= link_to 'List of products', admin_category_products_path(admin_category)
           td= link_to 'Show', admin_category_path(admin_category)
           td= link_to 'Edit', edit_admin_category_path(admin_category)
           td= link_to 'Destroy', admin_category_path(admin_category), method: :delete, data: { :confirm => 'Are you sure?' }
