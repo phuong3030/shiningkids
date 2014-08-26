@@ -53,7 +53,6 @@ class Admin::CategoriesController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def admin_category_params
-      binding.pry
       params.require(:category).permit(:name, :description, :image)
     end
 end

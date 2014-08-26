@@ -11,11 +11,30 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140824145918) do
+ActiveRecord::Schema.define(version: 20140826151053) do
 
   create_table "categories", force: true do |t|
     t.string   "name"
     t.string   "description"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "orders", force: true do |t|
+    t.integer  "user_id"
+    t.date     "date"
+    t.integer  "state"
+    t.integer  "quantity"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "product_galeries", force: true do |t|
+    t.integer  "img_type"
     t.string   "image_file_name"
     t.string   "image_content_type"
     t.integer  "image_file_size"
@@ -29,6 +48,8 @@ ActiveRecord::Schema.define(version: 20140824145918) do
     t.string   "name"
     t.float    "price"
     t.float    "saleoff"
+    t.string   "size"
+    t.string   "color"
     t.string   "description"
     t.datetime "created_at"
     t.datetime "updated_at"
