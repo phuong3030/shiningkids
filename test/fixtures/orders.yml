@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  date: 2014-08-26
+  state: 1
+  quantity: 1
+
+two:
+  date: 2014-08-26
+  state: 1
+  quantity: 1

@@ -6,6 +6,8 @@ class CreateProducts < ActiveRecord::Migration
       t.string :name
       t.float :price
       t.float :saleoff
+      t.string :size
+      t.string :color
       t.string :description
 
       t.timestamps
