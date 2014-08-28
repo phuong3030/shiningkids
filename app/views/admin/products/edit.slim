@@ -1,6 +1,6 @@
 - content_for :main_content
   h1 Editing product
-  = render 'form', :url => admin_category_product_path(@category_id, @product), :method => :patch
-  = link_to 'Show', admin_category_product_path(@category_id, @product)
-  |\ #{link_to 'Back', admin_category_products_path(:category_id => @category_id) }
+  = render 'form', :url => admin_category_product_path 
+  = link_to 'Show', admin_category_product_path(@category, @product)
+  |\ #{link_to 'Back', admin_category_products_path(@category) }
 

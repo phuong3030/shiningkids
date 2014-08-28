@@ -1,4 +1,4 @@
-= form_for @product, :url => url, :method => method do |f|
+= form_for [@category, @product], :url => url do |f|
   - if @product.errors.any?
     #error_explanation
       h2
@@ -8,7 +8,7 @@
         - @product.errors.full_messages.each do |message|
           li= message
   .field
-    = f.hidden_field :category_id, :value => @category_id
+    = f.hidden_field :category_id, :value => @category.id
   .field
     = f.label :name
     br
