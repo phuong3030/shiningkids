@@ -1,0 +1,12 @@
+- content_for :main_content
+  p#notice= notice
+  p
+    strong Img type:
+    = @product_image.img_type
+  p
+    strong Image:
+    = image_tag @product_image.image.url, :class => 'img-responsive'
+
+  = link_to 'Edit', edit_admin_category_product_image_path(@category, @product, @product_image)
+  |\ #{link_to 'Back', admin_category_product_images_path(@category, @product)}
+
