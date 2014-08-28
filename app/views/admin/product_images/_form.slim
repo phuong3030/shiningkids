@@ -1,0 +1,22 @@
+= form_for [@category, @product, @product_image], :url => url do |f|
+  - if @product_image.errors.any?
+    #error_explanation
+      h2
+        = pluralize(@product_image.errors.count, "error")
+        | prohibited this product_image from being saved:
+      ul
+        - @product_image.errors.full_messages.each do |message|
+          li= message
+  .field
+    = f.hidden_field :product_id, :value => @product.id
+  .field
+    = f.label :img_type
+    br
+      = f.number_field :img_type
+  .field
+    = f.label :image
+    br
+      = f.file_field :image, :class => 'btn', :class => 'form-control'
+  .actions
+    = f.submit
+

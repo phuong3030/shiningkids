@@ -1,6 +1,5 @@
 class Admin::ProductsController < ApplicationController
-  before_action :get_category_id
-  before_action :set_product, only: [:show, :edit, :update, :destroy]
+  before_action :set_product
 
   # GET /products
   def index
@@ -25,7 +24,7 @@ class Admin::ProductsController < ApplicationController
     @product = Product.new(product_params)
 
     if @product.save
-      redirect_to admin_category_product_path(@category_id, @product), notice: 'Product was successfully created.'
+      redirect_to admin_category_product_path(@category, @product), notice: 'Product was successfully created.'
     else
       render :new
     end
@@ -34,7 +33,7 @@ class Admin::ProductsController < ApplicationController
   # PATCH/PUT /products/1
   def update
     if @product.update(product_params)
-      redirect_to admin_category_product_path(@category_id, @product), notice: 'Product was successfully updated.'
+      redirect_to admin_category_product_path(@category, @product), notice: 'Product was successfully updated.'
     else
       render :edit
     end
@@ -47,18 +46,12 @@ class Admin::ProductsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_product
-      @product = Product.find(params[:id])
-      @category_id = @product.category_id
-    end
+  def set_product
+    @category = Category.find(params[:category_id])
+    @product = @category.products.find(params[:id]) if params[:id]
+  end
 
-    # Only allow a trusted parameter "white list" through.
-    def product_params
-      params.require(:product).permit(:name, :price, :saleoff, :description, :category_id)
-    end
-
-    def get_category_id
-      @category_id = params[:category_id]
-    end
+  def product_params
+    params.require(:product).permit(:name, :price, :saleoff, :description, :category_id)
+  end
 end

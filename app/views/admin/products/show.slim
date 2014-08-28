@@ -12,6 +12,6 @@
   p
     strong Description:
     = @product.description
-  = link_to 'Edit', edit_admin_category_product_path(@category_id, @product)
-  |\ #{link_to 'Back', admin_category_products_path(@category_id) }
+  = link_to 'Edit', edit_admin_category_product_path(@category, @product)
+  |\ #{link_to 'Back', admin_category_products_path(@category) }
 
