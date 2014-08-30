@@ -12,19 +12,26 @@ Rails.application.routes.draw do
     end
 
     # View orders route
-
+    get '/view-orders', :to => 'order#view_orders'
   end
 
   namespace :customer do 
     get '/my-account', :to => 'account#my_account'
 
-    get '/cart', :to => 'order#cart'
+    get '/view-cart', :to => 'order#view_cart'
     get '/checkout', :to => 'order#checkout'
     post '/checkout', :to => 'order#make_an_order'
+
+    get '/view-orders', :to => 'order#view_orders'
   end
 
 	scope :module => :home do
     root :to => 'home#index'
+
+    get '/categories/:id', :to => 'categories#show'
+    get '/categories/:id/products/:id', :to => 'products#show'
+    get '/contact-us', :to => 'home#contact'
+    get '/about-us', :to => 'home#about'
 	end
 
 end

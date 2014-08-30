@@ -11,9 +11,11 @@ gem 'sprockets-sass'
 
 gem 'devise'
 
-gem 'cancan'
+gem 'cancancan'
 
 gem 'kaminari'
+
+gem 'friendly_id'
 
 gem 'paperclip'
 
@@ -29,7 +31,7 @@ end
 
 group :production do 
   gem 'thin'
-# gem 'pg'
+  gem 'pg'
 # gem 'capistrano-rails'
 # gem 'uglifier', '>= 1.3.0'
 end

@@ -1,6 +1,17 @@
 class Home::HomeController< ActionController::Base
+
 	layout 'application'
 
-	def index
-	end
+  # GET / 
+  def index
+  end
+
+  # GET /contact-us 
+  def contact
+  end
+
+  # GET /about-us
+  def about 
+  end
+
 end
