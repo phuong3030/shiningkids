@@ -1,6 +1,10 @@
 class Customer::OrdersController < ApplicationController
-  # GET /customer/view-cart
-  def view_cart
+  # GET /customer/view-carts
+  def view_carts
+  end
+
+  # GET /customer/view-orders
+  def view_orders
   end
 
   # GET /customer/checkout 

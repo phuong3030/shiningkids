@@ -12,17 +12,16 @@ Rails.application.routes.draw do
     end
 
     # View orders route
-    get '/view-orders', :to => 'order#view_orders'
+    get '/view-orders', :to => 'orders#view_orders'
   end
 
   namespace :customer do 
     get '/my-account', :to => 'account#my_account'
 
-    get '/view-cart', :to => 'order#view_cart'
-    get '/checkout', :to => 'order#checkout'
-    post '/checkout', :to => 'order#make_an_order'
-
-    get '/view-orders', :to => 'order#view_orders'
+    get '/view-carts', :to => 'orders#view_carts'
+    get '/checkout', :to => 'orders#checkout'
+    get '/view-orders', :to => 'orders#view_orders'
+    post '/checkout', :to => 'orders#make_an_order'
   end
 
 	scope :module => :home do
