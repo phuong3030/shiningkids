@@ -12,6 +12,10 @@
 
   = render '/home/home/banners2'
 
-  .footer_container
+  .footer-container
     = render '/shared/footer'
 
+= content_for :page_footer
+
+= content_for :page_header
+  = stylesheet_link_tag 'home/index', media: 'all'  

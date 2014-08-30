@@ -1,4 +1,122 @@
 /*
- *= require bootstrap
  *= require shared/reset
+ *= require bootstrap
+ *= require font/font-awesome
  */
+
+.header-bg {
+  display: block !important;
+}
+
+input,select,textarea,button { 
+  font:12px Arial, Helvetica, sans-serif; 
+  vertical-align:middle; 
+  color:#000; 
+}
+
+input.input-text,select,textarea { 
+  border:1px solid #ececec;
+  moz-box-sizing:border-box;
+  -moz-box-sizing: border-box; 
+  -webkit-box-sizing: border-box; 
+  box-sizing: border-box;
+}
+
+input.input-text,textarea { 
+  padding:3px 2px 4px 2px; 
+  resize:none; 
+  -webkit-appearance: none; 
+  border-radius: 0;
+}
+
+select {
+  padding:2px;
+  moz-box-sizing:border-box;
+  -moz-box-sizing: border-box; 
+  -webkit-box-sizing: border-box; 
+  box-sizing: border-box;
+}
+
+select option { 
+  padding-right:10px; 
+}
+
+select.multiselect option { 
+  border-bottom:1px solid #ddd; 
+  padding:2px 5px; 
+}
+
+select.multiselect option:last-child { 
+  border-bottom:0; 
+}
+
+textarea { 
+  overflow:auto; 
+}
+
+input.radio { 
+  margin-right:3px; 
+}
+
+input.checkbox { 
+  margin-right:3px; 
+}
+
+input.qty { 
+  color:#333333; width:40px !important; text-align: center; 
+}
+
+button.button::-moz-focus-inner { 
+  padding:0; border:0; 
+} /* FF Fix */
+
+button.button { 
+  -webkit-border-fit:lines; 
+} /* <- Safari & Google Chrome Fix */
+
+button.button { 
+  background:transparent;
+  border:0;
+  overflow:visible;
+  cursor:pointer;
+  padding:0;
+  margin:0;
+  width:auto;
+}
+
+button.button > span { 
+  float:left; 
+  text-align:center;
+  white-space:nowrap; 
+  padding:0;
+}
+
+button.button span span { padding:0 22px; display:block; float:left; }
+
+button.button > span,
+.block-wishlist .actions a,
+.page-sitemap .links a {
+  background:#242727;
+  color:#fff;
+  font-size:14px;
+  font-weight:normal;
+  line-height:45px;
+  height:45px;
+  font-family: 'Open sans', sans-serif;
+}
+
+button.button:hover > span,
+.block-wishlist .actions a:hover,
+.page-sitemap .links a:hover {
+  background:#6e6e6e;
+  color:#fff;
+} 
+
+.clear {
+  clear: both;
+  display: block;
+  overflow: hidden;
+  visibility: hidden;
+  width: 0;
+  height: 0; 
+}

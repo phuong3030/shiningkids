@@ -19,8 +19,6 @@ gem 'friendly_id'
 
 gem 'paperclip'
 
-gem 'bootstrap-sass'
-
 gem 'slim'
 
 group :development do 

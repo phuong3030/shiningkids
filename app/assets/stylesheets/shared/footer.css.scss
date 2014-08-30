@@ -1,0 +1,145 @@
+/* Footer ================================================================================ */
+.footer-container{ padding:47px 0 30px; background: #303030; position: relative; z-index: 1;}
+.footer { position:relative;}
+.footer-cols-wrapper {  position:relative;overflow:hidden; margin-bottom: 10px;}
+.footer address {
+  font-size: 11px; 
+  color: #6c6b6b; 
+}
+.footer h4,
+.footer .block-subscribe .block-title strong,
+.footer h3 {
+  font-size:18px;
+  line-height:17px;
+  color:#fff;
+  font-weight:normal; 
+  text-transform:none;
+  position:relative;
+  margin-bottom:16px;
+}
+.footer ul li {
+  display:block;
+  padding:0 0 9px 0;
+}
+.footer ul li a {
+  display:inline-block;
+  color:#999898;
+  font-size: 13px;
+  font-weight: normal;
+  text-decoration:none;
+}
+.footer ul li a:hover{ color:#fb725e;}
+.footer .list-icon {overflow: hidden; margin-bottom: 31px;}
+.footer .list-icon li a {
+  font-size: 28px; 
+  line-height: 28px; 
+  color: #4e4e4e;
+}
+.footer .list-icon li a:hover {color: #fb725e;}
+.footer .list-icon li {float: left; margin-right: 15px;}
+.footer-container .bottom-container { text-align:center; }
+.footer-col.last { margin-right:0;}
+.footer-col.last {width: 23%;}
+.footer-col.contacts p {
+  font-size: 13px; 
+  color: #999898; 
+  line-height: 19px; 
+  margin-bottom: 12px;
+}
+.footer-col.contacts p i {
+  font-size: 28px; 
+  line-height: 28px; 
+  color: #fb725e; 
+  margin-right: 10px;   
+  display: block;  
+  float: left;
+}
+
+.store-switcher{ margin-bottom: 15px;}
+
+span.toggle {
+  background:url(../resources/toogle-button.png) 0 -61px no-repeat;
+  position:absolute;
+  cursor:pointer;
+  right: 10px;
+  top:7px;
+  height:13px;
+  width:13px;
+}
+span.opened {background-position: 0 0;}
+
+/* ======================================================================================= */
+
+#easyTooltip{
+  padding:5px 10px;
+  background:#333333;
+  color:#fff;
+  font-size:12px; 
+  text-transform:uppercase;
+  text-transform:none;
+  position:relative;
+  z-index:99;
+  font-weight:normal;
+}
+
+.banners-block {position:relative;overflow:hidden;}
+.banners-block li {float: left; margin-left: 10px;}
+.banners-block li:first-child {margin: 0;}
+.main-banner img { max-width: 100%;}
+
+.contact-block {
+  position:relative;
+  overflow:hidden;
+  width:100%;
+}
+.contact-block h2 {
+  float:none;
+  background:none;
+  border:none;
+  border-bottom: 2px solid #3A3A3A;
+  font-size:17px;
+  line-height:21px;
+  color:#383737;
+  font-weight:normal;
+  text-transform:uppercase;
+  position:relative;
+  margin: 0 0 16px;
+  padding: 0 0 7px;
+}
+
+.contact-left{ width:25%; float:right; padding-bottom:20px;}
+.contact-left h3 {
+  font-size:13px;
+  line-height:16px;
+  color:#333333;
+  text-transform:uppercase;
+  font-weight:normal;
+  margin-bottom:14px;
+}
+.contact-left p{ 
+  font-size:12px; 
+  color:#8a8989; 
+  line-height:17px;
+}
+.contact-left ul li{border-bottom:1px solid #ececec; padding-bottom:17px; margin-bottom:17px;}
+.contact-left ul li.last{ border:none; padding:0; margin:0;}
+#contactForm { float:left; width:73%;}
+#contactForm .form-list .input-box {width:auto;}
+#contactForm .fieldset{ background:none; border:none; padding:0; margin:0;}
+#contactForm .form-list input.input-text { border-box:border-box; width:95%;}
+#contactForm .form-list .field {float:left;width:33.33%;}
+#contactForm .form-list li {padding-bottom:10px;}
+#contactForm .form-list li.wide textarea { border-box:border-box; width:100%; resize:none; }
+#contactForm .form-list li.wide .input-box {width:98%;}
+#contactForm .buttons-set button.button {float:left;}
+#contactForm .buttons-set{ margin:0 0 0 0; padding:0; }
+#contactForm .buttons-set p.required {
+  color: #333333;
+  font-size: 12px; 
+  margin: 0 0 0px;
+  float:left; 
+  padding-left:15px; 
+  padding-top:5px;
+}
+.contact-btn a{ display:none;}
+.contact-btn li{ padding:0; margin:0;}

@@ -1,0 +1,16 @@
+li
+  a.product-image href="" title="" 
+    = image_tag product.image.url, :alt => product.name
+  .product-shop
+    .f-fix
+      h2.product-name
+        a href="" title="" 
+      .desc.std
+        p
+        a.link-learn href="" title=""  Learn More
+      .price-box
+        span#product-price-1.regular-price
+          span.price = product.price
+      button.button.btn-cart title=("Add to Cart") type="button" 
+        span
+          span Add to Cart
