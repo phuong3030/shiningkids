@@ -4,6 +4,23 @@
  *= require font/font-awesome
  */
 
+body { 
+  font-family:Arial; 
+  font-size:12px; 
+  line-height:18px; 
+  color:#696969; 
+  text-align:center; 
+  min-width:320px; 
+  background:#eeeeee; 
+  position:relative;
+  -webkit-text-size-adjust: none; 
+}
+
+.header-container, .main-container, .footer-container{
+  max-width: 1230px; 
+  margin: 0 auto;
+}
+
 .header-bg {
   display: block !important;
 }

@@ -1,20 +1,24 @@
 .slide-container
-  #main-banner.carousel.slide data-ride="carousel" 
 
-    /! Indicators
+  #slide-header.carousel.slide data-ride="carousel" 
+
     ol.carousel-indicators
-      li.active data-slide-to="0" data-target="#main-banner" 
-      li data-slide-to="1" data-target="#main-banner" 
-      li data-slide-to="2" data-target="#main-banner" 
+      li.active data-slide-to="0" data-target="#slide-header" 
+      li data-slide-to="1" data-target="#slide-header" 
+      li data-slide-to="2" data-target="#slide-header" 
 
-    /! Wrapper for slides
     .carousel-inner
+      .item.active
+        img alt="" src="/images/slide1.jpg" 
+          .carousel-caption
       .item
-        img alt="" src="" 
+        img alt="" src="/images/slide2.jpg" 
+          .carousel-caption
+      .item
+        img alt="" src="/images/slide3.jpg" 
           .carousel-caption
 
-    /! Controls
-    a.left.carousel-control data-slide="prev" href="#main-banner" role="button" 
-      span.glyphicon.glyphicon-chevron-left
-    a.right.carousel-control data-slide="next" href="#main-banner" role="button" 
-      span.glyphicon.glyphicon-chevron-right
+    a.left.carousel-control data-slide="prev" href="#slide-header" role="button" 
+      i.fa.fa-chevron-left
+    a.right.carousel-control data-slide="next" href="#slide-header" role="button" 
+      i.fa.fa-chevron-right
