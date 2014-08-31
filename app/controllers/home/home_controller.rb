@@ -4,6 +4,7 @@ class Home::HomeController< ActionController::Base
 
   # GET / 
   def index
+    @new_products = Product.first(8)
   end
 
   # GET /contact-us 

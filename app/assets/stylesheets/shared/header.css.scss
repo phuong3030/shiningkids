@@ -21,8 +21,8 @@
 
 /* Header ================================================================================ */
 
-.cms-home .header-bg {background: url(../resources/header-bot-tail.gif) bottom repeat-x; }
-.header-bg { padding-bottom: 100px;}
+.header-bg {background: url(/images/header-bot-tail.gif) bottom repeat-x; }
+.header-bg { padding-bottom: 350px;}
 
 .header-container .top-container { clear:both; text-align:right; }
 .header-container { padding:0; background: #fafafa; position: relative;}
@@ -287,4 +287,31 @@ padding: 6px 0 0; }
 
 .slide-container {
   margin: -62px 0 0px;
+}
+
+.carousel-control:hover, .carousel-control:focus {
+  filter: alpha(opacity=0);
+  opacity: 0;
+}
+
+.carousel-control {
+  filter: alpha(opacity=0);
+  opacity: 0;
+}
+
+.carousel-control .fa-chevron-left, .carousel-control .fa-chevron-right {
+  position: absolute;
+  top: 50%;
+  z-index: 5;
+  display: inline-block;
+  color: #303030;
+  font-size: 54px;
+}
+
+.carousel-control .fa-chevron-left {
+  left: 50%;
+}
+
+.carousel-control .fa-chevron-rigth {
+  right: 50%;
 }

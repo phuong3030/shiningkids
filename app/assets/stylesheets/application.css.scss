@@ -9,7 +9,6 @@ body {
   font-size:12px; 
   line-height:18px; 
   color:#696969; 
-  text-align:center; 
   min-width:320px; 
   background:#eeeeee; 
   position:relative;
@@ -24,6 +23,8 @@ body {
 .header-bg {
   display: block !important;
 }
+
+.main-container { padding:37px 0 17px; position:relative; z-index:1; margin-top: -100px !important; background: url(/images/content-tail.gif) top repeat-x #fff; }
 
 input,select,textarea,button { 
   font:12px Arial, Helvetica, sans-serif; 
@@ -137,3 +138,79 @@ button.button:hover > span,
   width: 0;
   height: 0; 
 }
+
+/* BreadCrumbs */
+.breadcrumbs {
+  background:#ececec;
+  padding:8px 19px;
+  margin:0 0 20px;
+  overflow:hidden;
+}
+.breadcrumbs li { float:left; color:#7b7b7b; }
+.breadcrumbs li a {text-decoration:none; color:#7b7b7b;}
+.breadcrumbs li a:hover {color:#333333;}
+.breadcrumbs li span {  display:inline-block; margin:0 8px 0 6px;}
+.breadcrumbs li strong {font-weight:normal; color:#333333; }
+
+/* Page Heading */
+.page-title,
+.category-title { background: #fafafa; padding:0; margin:0 0 23px; }
+
+.page-title h1,
+.page-title h2 {
+  font-size:28px;
+  font-weight:normal;
+  color:#fb725e;
+  margin:0;
+}
+
+.page-title .separator { margin:0 3px; }
+.page-title .link-rss { float:right; }
+.title-buttons { text-align:right; }
+.title-buttons h1,
+.title-buttons h2,
+.title-buttons h3,
+.title-buttons h4,
+.title-buttons h5,
+.title-buttons h6 { float:left; }
+
+.subtitle,
+.sub-title { clear:both; }
+
+/* BreadCrumbs */
+.breadcrumbs {
+  background:#ececec;
+  padding:8px 19px;
+  margin:0 0 20px;
+  overflow:hidden;
+}
+.breadcrumbs li { float:left; color:#7b7b7b; }
+.breadcrumbs li a {text-decoration:none; color:#7b7b7b;}
+.breadcrumbs li a:hover {color:#333333;}
+.breadcrumbs li span {  display:inline-block; margin:0 8px 0 6px;}
+.breadcrumbs li strong {font-weight:normal; color:#333333; }
+
+/* Page Heading */
+.page-title,
+.category-title { background: #fafafa; padding:0; margin:0 0 23px; }
+
+.page-title h1,
+.page-title h2 {
+  font-size:28px;
+  font-weight:normal;
+  color:#fb725e;
+  margin:0;
+}
+
+.page-title .separator { margin:0 3px; }
+.page-title .link-rss { float:right; }
+.title-buttons { text-align:right; }
+.title-buttons h1,
+.title-buttons h2,
+.title-buttons h3,
+.title-buttons h4,
+.title-buttons h5,
+.title-buttons h6 { float:left; }
+
+.subtitle,
+.sub-title { clear:both; }
