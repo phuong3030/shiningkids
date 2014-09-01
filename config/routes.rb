@@ -27,8 +27,8 @@ Rails.application.routes.draw do
 	scope :module => :home do
     root :to => 'home#index'
 
-    get '/categories/:id', :to => 'categories#show'
-    get '/categories/:id/products/:id', :to => 'products#show'
+    get '/categories/:id', :to => 'home#show_category', :as => 'group_products'
+    get '/categories/:id/product/:id', :to => 'home#show_product', :as => 'product_detail'
     get '/contact-us', :to => 'home#contact'
     get '/about-us', :to => 'home#about'
 	end

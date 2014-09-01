@@ -9,4 +9,6 @@
                 .clear
               .page-title
                 h2 New Products
- 
+              ul.products-grid.row
+                - @new_products.collect do |product| 
+                  = render '/home/shared/product_box_item', :product => product
