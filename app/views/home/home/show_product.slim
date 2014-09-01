@@ -4,6 +4,47 @@
     = render '/shared/header'
 
   .main-container-tile
+    .main-container.col2-right-layout
+      .container
+        .row
+          .col-md-12.col-xs-12
+            .main
+              .row
+                .col-main.col-md-9.col-xs-12
+                  .padding-s
+                    .product-view
+                      .product-essential
+                        .product-img-box
+                          p.product-image.cloud-zoom rel="transparentImage: 'data:image/gif;base64,R0lGODlhAQABAID/AMDAwAAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==', useWrapper: false, showTitle: true, zoomWidth:'300', zoomHeight:'400', adjustY:0, adjustX:10"
+                            /= image_tag @product.product_images[
+                          span
+                          p
+                          .more-views
+                            .container-slider
+                              .tumbSlider-none
+                                ul.slider
+                                  li
+                                    a href="" 
+                                      img src="" 
+                        .product-shop
+                          .product-name
+                            h1 = @product.name
+                          .short-description
+                            h2 Quick Overview
+                            .std
+                              p = @product.description
+                          p.availability.in-stock
+                            | Availability:
+                            span In stock
+                          .price-box
+                            span#product-price-18.regular-price
+                              span.price = @product.price
+                          .clear
+                          .product-options-bottom
+                            .add-to-cart
+                              button.button.btn-cart title=("Add to Cart") type="button" 
+                                span
+                                  = content_tag :span, 'Add to Cart', :'data-id' => @product.id
 
   .clear
 

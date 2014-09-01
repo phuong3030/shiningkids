@@ -1,5 +1,5 @@
 li.item.col-md-3.col-xs-12
-  = link_to product_detail_path(product.category_id, product), :title => product.name, :class => 'product-image' do
+  = link_to product_detail_path(product), :title => product.name, :class => 'product-image' do
     = image_tag product.product_images[0].image.url, :alt => product.name 
   .button-block
     button.button.btn-cart title=("Add to Cart") type="button" 
@@ -9,7 +9,7 @@ li.item.col-md-3.col-xs-12
         span Details
   .product-shop
     h3.product-name
-      = link_to product.name, product_detail_path(product.category_id, product.id), :title => product.name
+      = link_to product.name, product_detail_path(product.id), :title => product.name
     .price-box
       span#regular-price
         span.price = product.price
