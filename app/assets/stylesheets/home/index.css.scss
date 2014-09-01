@@ -1,0 +1,176 @@
+//= require home/shared/product_detail
+
+/******************** Banner ***********************/
+.slider_block { overflow:hidden; }
+.banners { margin-top: -50px; position: relative; }
+.tbanner { 
+  position:relative; 
+  float: left; 
+  width: 33.33%; 
+  z-index: 10;
+  background: #fff;
+}
+.tbanner a{ display: block;}
+.tbanner img { max-width:100%; }
+.tbanner:hover img { opacity:0.8; filter:alpha(opacity=80); }
+.tbanner .b_holder { 
+  position:absolute; 
+  top:50px; 
+  left:30px; 
+  width: 60%; 
+  z-index:1; 
+  color: #fff; 
+  font-size: 15px; 
+  line-height: 20px; 
+  text-align: left;
+}
+.tbanner h2 {  
+  font-size:31px; 
+  line-height: 31px; 
+  font-weight:normal; 
+  text-transform:none; 
+  color:#fff; 
+  margin:0 0 22px; 
+}
+.tbanner h2 strong { 
+  display:block; 
+  font-size:51px; 
+  line-height: 45px; 
+  font-weight:normal; 
+  margin:-2px 0 0px; 
+}
+.tbanner h2 span{ 
+  display: block; 
+  font-size: 71px; 
+  color: #303030; 
+  line-height: 71px; 
+  font-family: Arial, sans-serif;   
+  letter-spacing: -3px;
+}
+.tbanner .link{ 
+  position: absolute; 
+  bottom: 18px; 
+  right: 15px; 
+  font-size: 22px; 
+  color: #fff;
+}
+.tbanner:hover .link{ color: #fb725e; opacity: 1; }
+.banner2 { }
+.banner3 .b_holder{ color: #000;}
+
+.banner5 h2{ color: #fb725e;}
+.banner5 .b_holder{ color: #000;}
+
+
+.sample { overflow:hidden; }
+.sample .span8, sample .span4 { float:left; }
+
+.bottom-banners-container { display:none; background:#fff; margin:0 auto; padding:0 0 50px 0; }
+.cms-index-index .bottom-banners-container { display:block; }
+.banners_row { overflow:hidden; margin-bottom:30px; }
+.b_ban { }
+.b_ban.banner_bottom4 { margin-bottom: 50px;}
+
+.b_ban img { max-width:100%; }
+.b_ban:hover img { opacity:0.8; filter:alpha(opacity=80); }
+.b_ban .b_holder { 
+  position:absolute; 
+  top:14px; 
+  left:29px; 
+  z-index:1; 
+  text-align: left;
+}
+.b_ban h2 { 
+  font-family:'Open Sans'; 
+  font-size:31px; 
+  font-weight:normal; 
+  text-transform:uppercase; 
+  color:#fff; 
+  margin:0 0 50px 0; 
+}
+.b_ban h2 strong { 
+  display:block; 
+  font-size:51px; 
+  font-weight:normal; 
+  margin-bottom:-11px; 
+}
+.b_ban p { 
+  font-size:13px; 
+  color:#fff; 
+  line-height:19px; 
+  width:290px; 
+}
+
+.grey_row {}
+.grey_ban { background:#fff; border:solid 1px #dcdbdb; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+
+.grey_ban a { display:block;  padding:24px 28px 25px; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+.grey_ban a h2 { 
+  font-size:24px; 
+  font-weight:normal; 
+  text-transform:uppercase; 
+  color:#303030; 
+  font-family: 'Open sans', sans-serif; 
+  margin:0 0 10px 0; 
+}
+.grey_ban a p { 
+  font-size:13px; 
+  font-weight:normal; 
+  color:#949494; 
+  line-height:20px; 
+  margin:0 0 0 0; 
+}
+.grey_ban a p:after{ 
+  content: '\f054'; 
+  font-size: 13px; 
+  color: #3e3e3e;   
+  padding-left: 4px; 
+}
+.smban1 a h2:before{ 
+  content: '\f0d1'; 
+  font-size: 38px; 
+  color: #949494; 
+  padding-right: 9px; 
+}
+.smban2 a h2:before{ 
+  content: '\f095'; 
+  font-size: 38px; 
+  color: #949494; 
+  padding-right: 9px; 
+}
+.smban3 a h2:before{ 
+  content: '\f09d'; 
+  font-size: 38px; 
+  color: #949494; 
+  padding-right: 9px;
+}
+.grey_ban:hover { background:#303030; }
+.grey_ban:hover a h2, .grey_ban:hover a p{ color: #fff;}
+.grey_ban:hover p:after{ color: #fff;}
+
+.tbanner .link,
+.products-grid button.btn-cart span span,
+.grey_ban:hover p:after,
+.grey_ban:hover a h2, .grey_ban:hover a p,
+.products-grid button.button,
+.products-grid .actions a,
+.products-list .actions a,
+.sf-menu li a,
+#back-top span,
+.product-name a,
+button.button > span,
+.block-wishlist .actions a,
+.page-sitemap .links a,
+.footer ul li a,
+.header .links li a,
+.header-button > a,
+.header-button ul li a,
+.header .form-search button.button .icon-search,
+.camera_prev > span:before,
+.camera_next > span:before,
+.socials a,
+.tbanner img,
+.b_ban img,
+.grey_ban,
+.banner img,
+{ transition: all 0.3s ease 0s; }

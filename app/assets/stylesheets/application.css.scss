@@ -1,4 +1,219 @@
 /*
- *= require bootstrap
  *= require shared/reset
+ *= require bootstrap
+ *= require font/font-awesome
+ *= require superfish
+ *= require shared/header
+ *= require shared/footer
  */
+
+body { 
+  font-family:Arial; 
+  font-size:12px; 
+  line-height:18px; 
+  color:#696969; 
+  min-width:320px; 
+  background:#eeeeee; 
+  position:relative;
+  -webkit-text-size-adjust: none; 
+}
+
+.header-container, .main-container, .footer-container{
+  max-width: 1230px; 
+  margin: 0 auto;
+}
+
+.header-bg {
+  display: block !important;
+}
+
+.main-container { padding:37px 0 17px; position:relative; z-index:1; margin-top: -100px !important; background: url(/images/content-tail.gif) top repeat-x #fff; }
+
+input,select,textarea,button { 
+  font:12px Arial, Helvetica, sans-serif; 
+  vertical-align:middle; 
+  color:#000; 
+}
+
+input.input-text,select,textarea { 
+  border:1px solid #ececec;
+  moz-box-sizing:border-box;
+  -moz-box-sizing: border-box; 
+  -webkit-box-sizing: border-box; 
+  box-sizing: border-box;
+}
+
+input.input-text,textarea { 
+  padding:3px 2px 4px 2px; 
+  resize:none; 
+  -webkit-appearance: none; 
+  border-radius: 0;
+}
+
+select {
+  padding:2px;
+  moz-box-sizing:border-box;
+  -moz-box-sizing: border-box; 
+  -webkit-box-sizing: border-box; 
+  box-sizing: border-box;
+}
+
+select option { 
+  padding-right:10px; 
+}
+
+select.multiselect option { 
+  border-bottom:1px solid #ddd; 
+  padding:2px 5px; 
+}
+
+select.multiselect option:last-child { 
+  border-bottom:0; 
+}
+
+textarea { 
+  overflow:auto; 
+}
+
+input.radio { 
+  margin-right:3px; 
+}
+
+input.checkbox { 
+  margin-right:3px; 
+}
+
+input.qty { 
+  color:#333333; width:40px !important; text-align: center; 
+}
+
+button.button::-moz-focus-inner { 
+  padding:0; border:0; 
+} /* FF Fix */
+
+button.button { 
+  -webkit-border-fit:lines; 
+} /* <- Safari & Google Chrome Fix */
+
+button.button { 
+  background:transparent;
+  border:0;
+  overflow:visible;
+  cursor:pointer;
+  padding:0;
+  margin:0;
+  width:auto;
+}
+
+button.button > span { 
+  float:left; 
+  text-align:center;
+  white-space:nowrap; 
+  padding:0;
+}
+
+button.button span span { padding:0 22px; display:block; float:left; }
+
+button.button > span,
+.block-wishlist .actions a,
+.page-sitemap .links a {
+  background:#242727;
+  color:#fff;
+  font-size:14px;
+  font-weight:normal;
+  line-height:45px;
+  height:45px;
+  font-family: 'Open sans', sans-serif;
+}
+
+button.button:hover > span,
+.block-wishlist .actions a:hover,
+.page-sitemap .links a:hover {
+  background:#6e6e6e;
+  color:#fff;
+} 
+
+.clear {
+  clear: both;
+  display: block;
+  overflow: hidden;
+  visibility: hidden;
+  width: 0;
+  height: 0; 
+}
+
+/* BreadCrumbs */
+.breadcrumbs {
+  background:#ececec;
+  padding:8px 19px;
+  margin:0 0 20px;
+  overflow:hidden;
+}
+.breadcrumbs li { float:left; color:#7b7b7b; }
+.breadcrumbs li a {text-decoration:none; color:#7b7b7b;}
+.breadcrumbs li a:hover {color:#333333;}
+.breadcrumbs li span {  display:inline-block; margin:0 8px 0 6px;}
+.breadcrumbs li strong {font-weight:normal; color:#333333; }
+
+/* Page Heading */
+.page-title,
+.category-title { background: #fafafa; padding:0; margin:0 0 23px; }
+
+.page-title h1,
+.page-title h2 {
+  font-size:28px;
+  font-weight:normal;
+  color:#fb725e;
+  margin:0;
+}
+
+.page-title .separator { margin:0 3px; }
+.page-title .link-rss { float:right; }
+.title-buttons { text-align:right; }
+.title-buttons h1,
+.title-buttons h2,
+.title-buttons h3,
+.title-buttons h4,
+.title-buttons h5,
+.title-buttons h6 { float:left; }
+
+.subtitle,
+.sub-title { clear:both; }
+
+/* BreadCrumbs */
+.breadcrumbs {
+  background:#ececec;
+  padding:8px 19px;
+  margin:0 0 20px;
+  overflow:hidden;
+}
+.breadcrumbs li { float:left; color:#7b7b7b; }
+.breadcrumbs li a {text-decoration:none; color:#7b7b7b;}
+.breadcrumbs li a:hover {color:#333333;}
+.breadcrumbs li span {  display:inline-block; margin:0 8px 0 6px;}
+.breadcrumbs li strong {font-weight:normal; color:#333333; }
+
+/* Page Heading */
+.page-title,
+.category-title { background: #fafafa; padding:0; margin:0 0 23px; }
+
+.page-title h1,
+.page-title h2 {
+  font-size:28px;
+  font-weight:normal;
+  color:#fb725e;
+  margin:0;
+}
+
+.page-title .separator { margin:0 3px; }
+.page-title .link-rss { float:right; }
+.title-buttons { text-align:right; }
+.title-buttons h1,
+.title-buttons h2,
+.title-buttons h3,
+.title-buttons h4,
+.title-buttons h5,
+.title-buttons h6 { float:left; }
+
+.subtitle,
+.sub-title { clear:both; }

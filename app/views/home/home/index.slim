@@ -1,2 +1,22 @@
 = content_for :main_content
-	h1 homepage
+
+  .header-bg
+    = render '/shared/header'
+    = render '/home/home/slide_header'
+    = render '/home/home/banners1'
+
+  .main-container-tile
+    = render '/home/home/new_products'
+
+  = render '/home/home/banners2'
+  
+  .clear
+
+  .footer-container
+    = render '/shared/footer'
+
+= content_for :page_footer
+  = javascript_include_tag 'home/index'
+
+= content_for :page_header
+  = stylesheet_link_tag 'home/index', media: 'all'  

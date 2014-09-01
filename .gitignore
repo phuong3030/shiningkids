@@ -9,7 +9,8 @@
 /.bundle
 
 # Ignore public images
-/public/images
+/public/images/category_image/
+/public/images/product_image/
 
 # Ignore the default SQLite database.
 /db/*.sqlite3

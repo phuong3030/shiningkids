@@ -1,4 +1,5 @@
 class Admin::ProductImagesController < ApplicationController
+
   before_action :set_product_image
 
   # GET /product_images

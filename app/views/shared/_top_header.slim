@@ -1,0 +1,62 @@
+.row
+  .col-md-12.col-xs-12 
+    .header
+
+      .header-buttons
+        .header-button.lang-list
+          a href="#" 
+            | vi
+            i.fa.fa-chevron-circle-down
+          ul
+            li
+              a href="#" title="vi_VI" 
+                | VietNam
+                span vi
+            li
+              a href="#" title="en_US"
+                | English
+                span en
+
+      .header-links
+        ul.links
+          li.first
+            a href="/customer" title=("My Account")  My Account
+          li.top-car
+            a.top-link-cart href="/customer/cart" title=("My Cart")  My Cart
+          li
+            a.top-link-checkout href="/customer/checkout" title="Checkout"  Checkout
+          li.last
+            a href="/customer/sign_in" title=("Log In")  Log In
+  
+      .clear
+
+      h1.logo
+        strong Shining Kids
+        a href="/" title=("Shining Kids") 
+          img alt=("Shining Kids") src="/images/logo.gif" 
+
+      .quick-access
+      
+        .row-2
+          .block-cart-header
+            i.fa.fa-chevron-circle-down
+            h3 My Cart:
+            .block-content
+              .empty
+                | 0 item(s) -
+                span.price $0.00
+                .cart-content style=("display: none;") 
+                  | You have no items in your shopping cart.
+
+        form#search_mini_form action="search.html" method="get" 
+          .form-search
+            label for="search"  Search:
+            input#search.input-text autocomplete="off" maxlength="128" name="q" type="text" value="" 
+              button.button title="Search" type="submit" 
+                strong
+                  i.fa.fa-search.icon-search
+                #search_autocomplete.search-autocomplete style=("display: none;") 
+        .clear
+
+      .clear
+
