@@ -23,6 +23,7 @@ Rails.application.routes.draw do
     get '/checkout', :to => 'orders#checkout'
     get '/view-orders', :to => 'orders#view_orders'
     post '/checkout', :to => 'orders#make_an_order'
+    post '/cart', :to => 'orders#add_to_cart'
   end
 
 	scope :module => :home do

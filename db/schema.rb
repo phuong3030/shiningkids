@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(version: 20140827153915) do
 
   create_table "orders", force: true do |t|
     t.integer  "user_id"
+    t.integer  "product_id"
     t.date     "date"
     t.integer  "state"
     t.integer  "quantity"
@@ -57,9 +58,10 @@ ActiveRecord::Schema.define(version: 20140827153915) do
   end
 
   create_table "users", force: true do |t|
-    t.string   "email",               default: "", null: false
-    t.string   "encrypted_password",  default: "", null: false
+    t.string   "email",               null: false
+    t.string   "encrypted_password",  null: false
     t.datetime "remember_created_at"
+    t.string   "type"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

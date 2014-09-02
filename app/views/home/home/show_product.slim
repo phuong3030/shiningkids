@@ -42,9 +42,9 @@
                           .clear
                           .product-options-bottom
                             .add-to-cart
-                              button.button.btn-cart title=("Add to Cart") type="button" 
+                              button.button.btn-cart title=("Add to Cart") type="button" data-id="#{@product.id}"
                                 span
-                                  = content_tag :span, 'Add to Cart', :'data-id' => @product.id
+                                  = content_tag :span, 'Add to Cart' 
 
   .clear
 

@@ -12,18 +12,25 @@ class Home::HomeController< ActionController::Base
     # INIT paginator
     page = params[:page] || 1
 
-    @category = Category.find(params[:id])
-    @products = @category.products.includes(:product_images).page(page).per(5)
-
-    redirect_to root_url unless @products
+    begin
+      @category = Category.find(params[:id])
+      @products = @category.products.includes(:product_images).page(page).per(5)
+      redirect_to root_url unless @products
+    rescue
+      redirect_to root_url
+    end
   end
 
   # GET /products/:id
   def show_product
-    @product = Product.includes(:product_images).find(params[:id])
-    @images = @product.product_images
+    begin
+      @product = Product.includes(:product_images).find(params[:id])
+      @images = @product.product_images
 
-    redirect_to root_url unless @product
+      redirect_to root_url unless @product
+    rescue
+      redirect_to root_url
+    end
   end
 
   # GET /contact-us 

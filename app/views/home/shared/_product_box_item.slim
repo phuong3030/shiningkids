@@ -2,8 +2,8 @@ li.item.col-md-3.col-xs-12
   = link_to product_detail_path(product), :title => product.name, :class => 'product-image' do
     = image_tag product.product_images[0].image.url, :alt => product.name 
   .button-block
-    button.button.btn-cart title=("Add to Cart") type="button" 
-      = content_tag :i, nil, :'data-id' => product.id, :class => 'fa fa-2x fa-shopping-cart'
+    button.button.btn-cart title=("Add to Cart") type="button" data-id="#{product.id}"
+      = content_tag :i, nil, :class => 'fa fa-2x fa-shopping-cart'
     button.button title="Details" type="button" 
       span
         span Details

@@ -1,0 +1,17 @@
+= content_for :main_content
+
+  .header-bg
+    = render '/shared/header'
+
+  .main-container-tile
+
+  .clear
+
+  .footer-container
+    = render '/shared/footer'
+
+= content_for :page_footer
+  = javascript_include_tag 'home/show_category'
+
+= content_for :page_header
+  = stylesheet_link_tag 'home/show_category', media: 'all'  

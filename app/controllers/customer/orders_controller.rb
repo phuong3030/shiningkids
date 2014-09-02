@@ -17,8 +17,21 @@ class Customer::OrdersController < ApplicationController
   end
 
   # POST /customer/add-to_cart
-  def add_item_to_cart
-    current_customer.orders << params[:order]
+  def add_to_cart
+    begin
+      order = Order.new(
+        :product_id => params[:id], 
+        :date => Date.today, 
+        :quantity => 1, 
+        :state => 1
+      )
+      current_customer.orders << order
+      cart = current_customer.orders.includes(:product).cart
+
+      render :json => cart if request.xhr? >= 0
+    rescue 
+      puts 'errors'
+    end
   end
 
   # GET /customer/make-an-order
