@@ -3,7 +3,7 @@ class Customer::OrdersController < ApplicationController
 
   # GET /customer/view-carts
   def view_carts
-    @cart = current_customer.orders.includes(:product).cart
+    @cart = current_customer.orders.includes(:product).includes(:product_images).cart
   end
 
   # GET /customer/view-orders
@@ -26,7 +26,7 @@ class Customer::OrdersController < ApplicationController
         :state => 1
       )
       current_customer.orders << order
-      cart = current_customer.orders.includes(:product).cart
+      cart = current_customer.orders.includes(:product).includes(:product_images).cart
 
       render :json => cart if request.xhr? >= 0
     rescue 

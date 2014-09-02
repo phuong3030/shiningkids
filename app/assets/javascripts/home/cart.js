@@ -26,7 +26,32 @@
   });
 
   function buildCart (carts) {
-  
+
+    var i = 0,
+        cartDOMs = "";
+
+    for (; i < carts.length; i++) {
+      if (i < 3) { 
+        cartDOMs = cartDOMs + cartItem(carts[i]);
+      }
+      total += carts[i].product.price;
+    } 
+
+    $('ol.cart-sidebar').html(cartDOMs);
+    $('.amount-2 .price').html(total);
+    $('.subtotal .price').html(total);
+  }
+
+  function cartItem (item) {
+    return '<li class="item"><div class="product-control-buttons">' + 
+       '<a href="#" class="btn-remove">Remove This Item</a></div>' + 
+       '<a href="/product/' + item.product.id + 
+       '" title="' + item.product.name + '" class="product-image">' +
+       '<img src="' + item.product.product_images[0].image.url + '"' + 
+       '</a><p class="product-name"><a href="/product/' + item.product.id +
+       '">' + item.product.name + '</a></p><div class="product-details">' +
+       '<strong>1</strong>x<span class="price">' + item.product.price +
+       '</span></div>';
   }
 
 }) (jQuery);
