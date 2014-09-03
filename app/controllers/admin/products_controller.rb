@@ -3,7 +3,7 @@ class Admin::ProductsController < ApplicationController
 
   # GET /products
   def index
-    @products = Product.all
+    @products = @category.products
   end
 
   # GET /products/1

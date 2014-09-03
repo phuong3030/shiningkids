@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   end
 
   namespace :customer do 
+    get '/', :to => 'account#my_account'
     get '/my-account', :to => 'account#my_account'
     get '/edit-account-information', :to => 'account#edit_account'
     patch '/edit-account-information', :to => 'account#edit_customer'
@@ -25,13 +26,14 @@ Rails.application.routes.draw do
     get '/view-orders', :to => 'orders#view_orders'
     post '/checkout', :to => 'orders#make_an_order'
     post '/remove-this-cart', :to => 'orders#remove_cart'
+    post '/cart', :to => 'orders#add_to_cart'
   end
 
   scope :module => :home do
     root :to => 'home#index'
 
     get '/categories/:id', :to => 'home#show_category', :as => 'group_products'
-    get '/categories/:id/product/:id', :to => 'home#show_product', :as => 'product_detail'
+    get '/product/:id', :to => 'home#show_product', :as => 'product_detail'
     get '/contact-us', :to => 'home#contact'
     get '/about-us', :to => 'home#about'
   end

@@ -1,6 +1,9 @@
 class Customer::AccountController < ApplicationController
-  # GET /my-account
-  def dashboard
+  before_filter :authenticate_customer!
+
+  # GET / or /my-account
+  def my_account
+    
   end
   
   # GET /edit-account-information

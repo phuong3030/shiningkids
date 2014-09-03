@@ -1,9 +1,0 @@
-class Customer::AccountController < ApplicationController
-  # GET /my-account
-  def dashboard
-  end
-  
-  # GET /edit-account-information
-  def edit_account
-  end
-end

@@ -1,16 +1,16 @@
-li
-  = link_to product_detail_path(product.category_id, product), :title => product.name
+li.item
+  = link_to product_detail_path(product), :title => product.name, :class => 'product-image'
     = image_tag product.product_images[0].image.url, :alt => product.name
   .product-shop
     .f-fix
       h2.product-name
-        = link_to product.name, product_detail_path(product.category_id, product), :title => product.name
+        = link_to product.name, product_detail_path(product), :title => product.name
       .desc.std
-        p
-        = link_to "Learn More", product_detail_path(product.cateogry_id, product), :class => 'link-learn', :title => product.name
+        p = product.description
+        = link_to "Learn More", product_detail_path(product), :class => 'link-learn', :title => product.name
       .price-box
         span#product-price-1.regular-price
           span.price = product.price
-      button.button.btn-cart title=("Add to Cart") type="button" 
+      button.button.btn-cart title=("Add to Cart") type="button" data-id="#{product.id}" 
         span
-          = content_tag :span, "Add to Cart", :data-id => product.id
+          = content_tag :span, "Add to Cart"
