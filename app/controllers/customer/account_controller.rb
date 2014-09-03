@@ -5,4 +5,12 @@ class Customer::AccountController < ApplicationController
   def my_account
     
   end
+  
+  # GET /edit-account-information
+  def edit_account
+  end
+
+  # PATCH /edit-account-information
+  def edit_customer
+  end
 end
