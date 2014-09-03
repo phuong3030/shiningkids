@@ -4,14 +4,47 @@
     = render '/shared/header'
 
   .main-container-tile
+    .main-container.col2-left-layout
+      .container
+        .row
+          .span12
+            .main
+              .row
+                .col-left.sidebar.col-md-3.col-xs-12
+                  .block.block-account.first
+                    .block-title
+                      strong
+                        span My Account
+                      span.toggle
+                      span.toggle
+                    .block-content
+                      ul
+                        li
+                          = link_to "Account Dashboard", customer_path 
+                        li
+                          = link_to "Change Password", edit_customer_registration_path
+                        li
+                          = link_to "Change Account Information", customer_edit_account_information_path
+                        li.current
+                          strong View Carts
+                        li 
+                          = link_to "View Orders", customer_view_orders_path
+                        li
+                          = link_to "Checkout", customer_checkout_path
 
+                .col-main.col-md-9.col-xs-12
+                  .padding-s
+                    .my-account
+                      .dashboard
+                        .page-title
+                          h1 Change Account Information
   .clear
 
   .footer-container
     = render '/shared/footer'
 
 = content_for :page_footer
-  = javascript_include_tag 'home/show_category'
+  = javascript_include_tag 'customer/account'
 
 = content_for :page_header
-  = stylesheet_link_tag 'home/show_category', media: 'all'  
+  = stylesheet_link_tag 'customer/account', media: 'all'  

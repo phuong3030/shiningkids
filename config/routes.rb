@@ -17,8 +17,7 @@ Rails.application.routes.draw do
 
   namespace :customer do 
     get '/', :to => 'account#my_account'
-    get '/my-account', :to => 'account#my_account'
-    get '/edit-account-information', :to => 'account#edit_account'
+    get '/edit-account-information', :to => 'account#edit_account_information'
     patch '/edit-account-information', :to => 'account#edit_customer'
 
     get '/view-carts', :to => 'orders#view_carts'

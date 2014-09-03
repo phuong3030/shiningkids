@@ -2,7 +2,7 @@ li.item
   .product-control-buttons
     a.btn-remove href="#"  Remove This Item
   = link_to product_detail_path(cart.product.id), :title => cart.product.name do 
-    = image_tag cart.product.product_images[0].image.url, :alt => product.name 
+    = image_tag cart.product.product_images[0].image.url, :alt => cart.product.name 
   p.product-name
     = link_to cart.product.name, product_detail_path(cart.product.id), :title => cart.product.name
     a href="/product/#{cart.product.id}"    

@@ -9,6 +9,8 @@ class DeviseCreateUsers < ActiveRecord::Migration
 
       t.datetime :remember_created_at
       t.string :type
+      t.string :firstname
+      t.string :lastname
 
       t.timestamps
     end

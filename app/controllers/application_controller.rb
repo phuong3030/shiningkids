@@ -21,7 +21,7 @@ class ApplicationController < ActionController::Base
 
   def show_cart
     if customer_signed_in?
-      @carts = current_customer.orders.includes(:product).includes(:product_images).cart 
+      @carts = current_customer.orders.includes(:product => [:product_images]).cart 
     else
       @carts = []
     end

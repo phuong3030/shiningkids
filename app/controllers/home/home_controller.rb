@@ -1,4 +1,4 @@
-class Home::HomeController< ActionController::Base
+class Home::HomeController< ApplicationController
 
 	layout 'application'
 

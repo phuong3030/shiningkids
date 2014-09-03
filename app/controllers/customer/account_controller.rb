@@ -3,11 +3,11 @@ class Customer::AccountController < ApplicationController
 
   # GET / or /my-account
   def my_account
-    
+    @orders = current_customer.orders.in_order
   end
   
   # GET /edit-account-information
-  def edit_account
+  def edit_account_information
   end
 
   # PATCH /edit-account-information

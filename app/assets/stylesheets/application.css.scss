@@ -18,6 +18,14 @@ body {
   -webkit-text-size-adjust: none; 
 }
 
+/* Base Columns */
+.col-left { float:left; }
+.col-right { float:right; }
+
+a             { color:#666;   text-decoration:none;}
+a:hover       { text-decoration:none; color:#333333; }
+a:focus        { outline:0; }
+
 .header-container, .main-container, .footer-container{
   max-width: 1230px; 
   margin: 0 auto;

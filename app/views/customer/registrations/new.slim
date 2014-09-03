@@ -20,3 +20,68 @@
 	  div= f.submit "Sign up"
 	= render "customer/shared/links"
 
+.main-container-tile
+  .main-container.col1-layout
+    .container
+      .row
+        .span12
+          .main
+            .col-main
+              .padding-s
+                .account-create
+                  .page-title
+                    h1 Create an Account
+                  form#form-validate action="" method="post" 
+                    .fieldset
+                      input name="success_url" type="hidden" value="" 
+                        input name="error_url" type="hidden" value="" 
+                          h2.legend Personal Information
+                          ul.form-list
+                            li.fields
+                              .customer-name
+                                .field.name-firstname
+                                  label.required for="firstname" 
+                                    em> *
+                                    | First Name
+                                  .input-box
+                                    input#firstname.input-text.required-entry maxlength="255" name="firstname" title=("First Name") type="text" value="" 
+                                .field.name-lastname
+                                  label.required for="lastname" 
+                                    em> *
+                                    | Last
+                                    | Name
+                                  .input-box
+                                    input#lastname.input-text.required-entry maxlength="255" name="lastname" title=("Last Name") type="text" value="" 
+                            li
+                              label.required for="email_address" 
+                                em> *
+                                | Email Address
+                              .input-box
+                                input#email_address.input-text.validate-email.required-entry name="email" title=("Email Address") type="email" value="" 
+                    .fieldset
+                      h2.legend Login Information
+                      ul.form-list
+                        li.fields
+                          .field
+                            label.required for="password" 
+                              em> *
+                              | Password
+                            .input-box
+                              input#password.input-text.required-entry.validate-password name="password" title="Password" type="password" 
+                          .field
+                            label.required for="confirmation" 
+                              em> *
+                              | Confirm
+                              | Password
+                            .input-box
+                              input#confirmation.input-text.required-entry.validate-cpassword name="confirmation" title=("Confirm Password") type="password" 
+                    .buttons-set
+                      p.required * Required Fields
+                      p.back-link
+                        a.back-link href="/customer/sign_in/" 
+                          small «
+                          | Back
+                      button.button title="Submit" type="submit" 
+                        span
+                          span Submit
+
