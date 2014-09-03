@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
-	devise_for :customer 
-	devise_for :admin, :skip => [:registrations] 
+  devise_for :customer 
+  devise_for :admin, :skip => [:registrations] 
 
   namespace :admin do
     # CRUD nested category, product, image
@@ -17,20 +17,23 @@ Rails.application.routes.draw do
 
   namespace :customer do 
     get '/my-account', :to => 'account#my_account'
+    get '/edit-account-information', :to => 'account#edit_account'
+    patch '/edit-account-information', :to => 'account#edit_customer'
 
     get '/view-carts', :to => 'orders#view_carts'
     get '/checkout', :to => 'orders#checkout'
     get '/view-orders', :to => 'orders#view_orders'
     post '/checkout', :to => 'orders#make_an_order'
+    post '/remove-this-cart', :to => 'orders#remove_cart'
   end
 
-	scope :module => :home do
+  scope :module => :home do
     root :to => 'home#index'
 
     get '/categories/:id', :to => 'home#show_category', :as => 'group_products'
     get '/categories/:id/product/:id', :to => 'home#show_product', :as => 'product_detail'
     get '/contact-us', :to => 'home#contact'
     get '/about-us', :to => 'home#about'
-	end
+  end
 
 end

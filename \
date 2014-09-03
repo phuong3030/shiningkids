@@ -6,8 +6,4 @@ class Customer::AccountController < ApplicationController
   # GET /edit-account-information
   def edit_account
   end
-
-  # PATCH /edit-account-information
-  def edit_customer
-  end
 end
