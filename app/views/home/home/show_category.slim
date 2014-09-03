@@ -4,8 +4,38 @@
     = render '/shared/header'
 
   .main-container-tile
-    .container
-      .row
+    .main-container.col2-right-layout
+      .container
+        .row
+          .col-md-12.col-xs-12
+            .main
+              .row
+                .col-main.col-md-9.col-xs-12
+                  .padding-s
+
+                    .page-title.category-title
+                      h1 = @category.name
+
+                    .category-products
+
+                      .toolbar
+                        .pager
+                          .pages
+                            strong Page:
+                            = paginate @products
+
+                      ol#products-list.products-list
+                        - @products.collect do |product|
+                          = render 'home/shared/product_wide_item', :product => product
+
+                      .clear
+
+                      .toolbar-bottom
+                        .toolbar
+                          .pager
+                            .pages
+                              strong Page:
+                              = paginate @products
 
   .clear
 

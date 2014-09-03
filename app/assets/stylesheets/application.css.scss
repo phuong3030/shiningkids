@@ -27,7 +27,13 @@ body {
   display: block !important;
 }
 
-.main-container { padding:37px 0 17px; position:relative; z-index:1; margin-top: -100px !important; background: url(/images/content-tail.gif) top repeat-x #fff; }
+.main-container { 
+  padding:37px 0 17px;
+  position:relative; 
+  z-index:1; 
+  margin-top: -100px; 
+  background: url(/images/content-tail.gif) top repeat-x #fff; 
+}
 
 input,select,textarea,button { 
   font:12px Arial, Helvetica, sans-serif; 

@@ -46,7 +46,25 @@
                 | 0 item(s) -
                 span.price $0.00
                 .cart-content style=("display: none;") 
-                  | You have no items in your shopping cart.
+                  .cart-indent
+                    p.subtotal
+                      span.label Cart Subtotal:
+                      span.price 0
+                    p.block-subtitle Recently added item(s)
+                    ol#cart-sidebar.mini-products-list
+                      - if @carts.size > 0
+                        - carts.collect do |cart|
+                          = render 'shared/cart_item', :cart => cart
+                      - else
+                        li.item
+                          | You have no items in your shopping cart.
+                    .actions
+                      button.button onclick="window.location.href='/customer/checkout';" title="Checkout" type="button" 
+                        span
+                          span Checkout
+                      button.button onclick="window.location.href='/customer/cart';" title=("My Cart") type="button" 
+                        span
+                          span My Cart
 
         form#search_mini_form action="search.html" method="get" 
           .form-search

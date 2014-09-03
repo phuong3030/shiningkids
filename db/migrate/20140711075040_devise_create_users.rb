@@ -2,12 +2,13 @@ class DeviseCreateUsers < ActiveRecord::Migration
   def change
     create_table(:users) do |t|
       # Database authenticatable
-      t.string :email,              null: false, default: ""
-      t.string :encrypted_password, null: false, default: ""
+      t.string :email,              null: false
+      t.string :encrypted_password, null: false
 
       # Rememberable
 
       t.datetime :remember_created_at
+      t.string :type
 
       t.timestamps
     end
