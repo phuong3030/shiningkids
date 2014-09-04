@@ -7,7 +7,7 @@
     .main-container.col2-left-layout
       .container
         .row
-          .span12
+          .col-md-12
             .main
               .row
                 .col-left.sidebar.col-md-3.col-xs-12
@@ -15,8 +15,6 @@
                     .block-title
                       strong
                         span My Account
-                      span.toggle
-                      span.toggle
                     .block-content
                       ul
                         li
@@ -26,7 +24,7 @@
                         li
                           = link_to "Change Account Information", customer_edit_account_information_path
                         li
-                          = link_to "View Carts", customer_view_carts_path
+                          = link_to "View Cart", customer_view_carts_path
                         li.current 
                           strong View Orders
                         li
@@ -37,7 +35,38 @@
                     .my-account
                       .dashboard
                         .page-title
-                          h1 Change Account Information
+                          h1 View orders
+                        .box-account.box-recent
+                          .box-head
+                            - if @orders.size > 0
+                              h2 Recent Orders
+                              table#my-orders-table.data-table
+                                thead
+                                  tr.first.last
+                                    th Order #
+                                    th Date
+                                    th Ship To
+                                    th
+                                      span.nobr Order Total
+                                    th Status
+                                    th &nbsp;
+                                tbody
+                                  - @orders.each_with_index do |item, i|
+                                    tr.first.last.odd
+                                      td.order-id = item.id
+                                      td.order-date
+                                        span.nobr = item.date
+                                      td.order-ship = current_customer.firstname + current_customer.lastname
+                                      td.order-total
+                                        span.price = item.product.price
+                                      td.order-status
+                                        em Pending
+                                      td.last
+                                        span.nobr
+                                          = link_to "View all orders", customer_view_orders_path
+                            - else 
+                              h2 You don't have any recent orders
+                          = paginate @orders
   .clear
 
   .footer-container

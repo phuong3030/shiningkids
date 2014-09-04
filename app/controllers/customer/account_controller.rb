@@ -3,7 +3,7 @@ class Customer::AccountController < ApplicationController
 
   # GET / or /my-account
   def my_account
-    @orders = current_customer.orders.in_order
+    @orders = current_customer.orders.includes(:product).in_order || []
   end
   
   # GET /edit-account-information

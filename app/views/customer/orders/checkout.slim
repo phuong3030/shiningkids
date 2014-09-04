@@ -7,7 +7,7 @@
     .main-container.col2-left-layout
       .container
         .row
-          .span12
+          .col-md-12
             .main
               .row
                 .col-left.sidebar.col-md-3.col-xs-12
@@ -15,8 +15,6 @@
                     .block-title
                       strong
                         span My Account
-                      span.toggle
-                      span.toggle
                     .block-content
                       ul
                         li
@@ -26,7 +24,7 @@
                         li
                           = link_to "Change Account Information", customer_edit_account_information_path
                         li
-                          = link_to "View Carts", customer_view_carts_path
+                          = link_to "View Cart", customer_view_carts_path
                         li 
                           = link_to "View Orders", customer_view_orders_path
                         li.current
@@ -38,6 +36,43 @@
                       .dashboard
                         .page-title
                           h1 Change Account Information
+                        - if @carts.size > 0
+                          #checkout-review-load.order-review
+                            #checkout-review-table-wrapper
+                              table#checkout-review-table.data-table
+                                thead
+                                  tr.first.last
+                                    th rowspan="1"  Product Name
+                                    th.a-center colspan="1" Price
+                                    th.a-center rowspan="1" Qty
+                                    th.a-center colspan="1" Subtotal
+                                tfoot
+                                  tr
+                                    td.a-left colspan="3" style="" 
+                                      strong Grand Total
+                                    td.a-right.last style="" 
+                                      strong
+                                        span.price = @carts.inject(0){|sum,x| sum + x.product.price}
+                                tbody
+                                  - @carts.collect do |cart|
+                                    tr
+                                      td
+                                        h3.product-name = cart.product.name
+                                      td.a-right
+                                        span.cart-price
+                                          span.price = cart.product.price
+                                      td.a-center 1
+                                      td.a-right.last
+                                        span.cart-price
+                                          span.price = cart.product.price
+                            #checkout-review-submit
+                              #review-buttons-container.buttons-set
+                                button.button.btn-checkout title=("Place Order") type="submit" 
+                                  span
+                                    span Place Order
+                        - else 
+                          p You don't have any items in shopping cart!
+ 
   .clear
 
   .footer-container

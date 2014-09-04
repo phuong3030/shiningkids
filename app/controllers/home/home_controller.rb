@@ -4,7 +4,7 @@ class Home::HomeController< ApplicationController
 
   # GET / 
   def index
-    @new_products = Product.includes(:product_images).includes(:category).first(8)
+    @new_products = Product.includes(:product_images).includes(:category).first(8) || []
   end
 
   # GET /categories/:id

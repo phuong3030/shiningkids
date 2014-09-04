@@ -13,6 +13,7 @@ Rails.application.routes.draw do
 
     # View orders route
     get '/view-orders', :to => 'orders#view_orders'
+    get '/', :to => 'categories#index'
   end
 
   namespace :customer do 

@@ -7,7 +7,7 @@
     .main-container.col2-left-layout
       .container
         .row
-          .span12
+          .col-md-12
             .main
               .row
                 .col-left.sidebar.col-md-3.col-xs-12
@@ -15,8 +15,6 @@
                     .block-title
                       strong
                         span My Account
-                      span.toggle
-                      span.toggle
                     .block-content
                       ul
                         li.current
@@ -26,7 +24,7 @@
                         li
                           = link_to "Change Account Information", customer_edit_account_information_path
                         li
-                          = link_to "View Carts", customer_view_carts_path
+                          = link_to "View Cart", customer_view_carts_path
                         li 
                           = link_to "View Orders", customer_view_orders_path
                         li
@@ -42,7 +40,7 @@
                           p.hello
                             strong 
                               | Hello, 
-                              = current_customer
+                              = current_customer.firstname + current_customer.lastname
                               | !
                           p From your My Account Dashboard you have the ability 
                             | to view a snapshot of your recent account activity 
@@ -50,44 +48,42 @@
                             | below to view or edit information.
                         .box-account.box-recent
                           .box-head
-                            h2 Recent Orders
-                          table#my-orders-table.data-table
-                            colgroup
-                              col width="1" 
-                                col width="1" 
-                                  col
-                                    col width="1" 
-                                      col width="1" 
-                                        col width="1" 
-                            thead
-                              tr.first.last
-                                th Order #
-                                th Date
-                                th Ship To
-                                th
-                                  span.nobr Order Total
-                                th Status
-                                th &nbsp;
-                            tbody
-                              tr.first.last.odd
-                                td.order-id
-                                td.order-date
-                                  span.nobr 10/23/13
-                                td.order-ship = current_customer
-                                td.order-total
-                                  span.price
-                                td.order-status
-                                  em Pending
-                                td.last
-                                  span.nobr
-                                    = link_to "View Orders", customer_view_orders_path
+                            - if @orders.size > 0
+                              h2 Recent Orders
+                              table#my-orders-table.data-table
+                                thead
+                                  tr.first.last
+                                    th Order #
+                                    th Date
+                                    th Ship To
+                                    th
+                                      span.nobr Order Total
+                                    th Status
+                                    th &nbsp;
+                                tbody
+                                  - @orders.each_with_index do |order, i|
+                                    - if i < 3
+                                      tr.first.last.odd
+                                        td.order-id = order.id
+                                        td.order-date
+                                          span.nobr = order.date
+                                        td.order-ship = current_customer.firstname + current_customer.lastname
+                                        td.order-total
+                                          span.price = order.product.price
+                                        td.order-status
+                                          em Pending
+                                        td.last
+                                          span.nobr
+                                            = link_to "View all orders", customer_view_orders_path
+                            - else 
+                              h2 You don't have any orders
                           .col2-set
                             .box
                               .box-title
                                 h3 Contact Information
                               .box-content
                                 p
-                                  = current_customer
+                                  = current_customer.firstname + current_customer.lastname
                                   br
                                     = current_customer.email
                                     | &nbsp;

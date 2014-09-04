@@ -1,6 +1,45 @@
 - content_for :main_content
-  h1 Editing product_image
-  = render 'form', :url => admin_category_product_image_path
-  = link_to 'Show', admin_category_product_image_path(@category, @product, @product_image)
-  |\ #{link_to 'Back', admin_category_product_images_path(@category, @product)}
 
+  .header-bg
+    = render '/shared/header'
+
+  .main-container-tile
+    .main-container.col2-right-layout
+      .container
+        .row
+          .col-md-12.col-xs-12
+            .main
+              .row
+                .col-left.sidebar.col-md-3.col-xs-12
+                  .block.block-account.first
+                    .block-title
+                      strong
+                        span Admin
+                    .block-content
+                      ul
+                        li
+                          = link_to "Admin dashboard", admin_path
+                        li
+                          = link_to "Category", admin_categories_path
+                        li 
+                          = link_to "View Orders", admin_view_orders_path
+
+               .col-main.col-md-9.col-xs-12
+                  .padding-s
+                    .page-title.category-title
+                      h1 Editing Image of product
+
+                    = render 'form', :url => admin_category_product_image_path
+                    = link_to 'Show', admin_category_product_image_path(@category, @product, @product_image)
+                    |- #{link_to 'Back', admin_category_product_images_path(@category, @product)}
+
+  .clear
+
+  .footer-container
+    = render '/shared/footer'
+
+= content_for :page_footer
+  = javascript_include_tag 'home/show_category'
+
+= content_for :page_header
+  = stylesheet_link_tag 'home/show_category', media: 'all'  

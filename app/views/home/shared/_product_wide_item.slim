@@ -1,6 +1,6 @@
 li.item
   = link_to product_detail_path(product), :title => product.name, :class => 'product-image'
-    = image_tag product.product_images[0].image.url, :alt => product.name
+    = image_tag product.product_images[0].image.url, :alt => product.name if product.product_images.size > 0
   .product-shop
     .f-fix
       h2.product-name

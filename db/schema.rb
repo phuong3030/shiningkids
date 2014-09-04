@@ -62,6 +62,8 @@ ActiveRecord::Schema.define(version: 20140827153915) do
     t.string   "encrypted_password",  null: false
     t.datetime "remember_created_at"
     t.string   "type"
+    t.string   "firstname"
+    t.string   "lastname"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
