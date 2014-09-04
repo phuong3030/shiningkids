@@ -4,14 +4,82 @@
     = render '/shared/header'
 
   .main-container-tile
+    .main-container.col2-left-layout
+      .container
+        .row
+          .col-md-12
+            .main
+              .row
+                .col-left.sidebar.col-md-3.col-xs-12
+                  .block.block-account.first
+                    .block-title
+                      strong
+                        span My Account
+                    .block-content
+                      ul
+                        li
+                          = link_to "Account Dashboard", customer_path 
+                        li
+                          = link_to "Change Password", edit_customer_registration_path
+                        li
+                          = link_to "Change Account Information", customer_edit_account_information_path
+                        li
+                          = link_to "View Cart", customer_view_carts_path
+                        li 
+                          = link_to "View Orders", customer_view_orders_path
+                        li.current
+                          strong Checkout
 
+                .col-main.col-md-9.col-xs-12
+                  .padding-s
+                    .my-account
+                      .dashboard
+                        .page-title
+                          h1 Change Account Information
+                        - if @carts.size > 0
+                          #checkout-review-load.order-review
+                            #checkout-review-table-wrapper
+                              table#checkout-review-table.data-table
+                                thead
+                                  tr.first.last
+                                    th rowspan="1"  Product Name
+                                    th.a-center colspan="1" Price
+                                    th.a-center rowspan="1" Qty
+                                    th.a-center colspan="1" Subtotal
+                                tfoot
+                                  tr
+                                    td.a-left colspan="3" style="" 
+                                      strong Grand Total
+                                    td.a-right.last style="" 
+                                      strong
+                                        span.price = @carts.inject(0){|sum,x| sum + x.product.price}
+                                tbody
+                                  - @carts.collect do |cart|
+                                    tr
+                                      td
+                                        h3.product-name = cart.product.name
+                                      td.a-right
+                                        span.cart-price
+                                          span.price = cart.product.price
+                                      td.a-center 1
+                                      td.a-right.last
+                                        span.cart-price
+                                          span.price = cart.product.price
+                            #checkout-review-submit
+                              #review-buttons-container.buttons-set
+                                button.button.btn-checkout title=("Place Order") type="submit" 
+                                  span
+                                    span Place Order
+                        - else 
+                          p You don't have any items in shopping cart!
+ 
   .clear
 
   .footer-container
     = render '/shared/footer'
 
 = content_for :page_footer
-  = javascript_include_tag 'home/show_category'
+  = javascript_include_tag 'customer/account'
 
 = content_for :page_header
-  = stylesheet_link_tag 'home/show_category', media: 'all'  
+  = stylesheet_link_tag 'customer/account', media: 'all'  

@@ -3,17 +3,19 @@ class Customer::OrdersController < ApplicationController
 
   # GET /customer/view-carts
   def view_carts
-    @cart = current_customer.orders.includes(:product).includes(:product_images).cart
+    page = params[:page] || 1
+    @carts = current_customer.orders.includes(:product => [:product_images]).cart.page(page).per(5) || []
   end
 
   # GET /customer/view-orders
   def view_orders
-    @orders = current_customer.orders.includes(:product)
+    page = params[:page] || 1
+    @orders = current_customer.orders.includes(:product).in_order.page(page).per(5) || []
   end
 
   # GET /customer/checkout 
   def checkout
-    @cart = current_customer.orders.includes(:product).cart
+    @carts = current_customer.orders.includes(:product).cart || []
   end
 
   # POST /customer/add-to_cart
@@ -36,7 +38,7 @@ class Customer::OrdersController < ApplicationController
 
   # GET /customer/make-an-order
   def make_an_order
-    current_customer.orders.update_all(:state => 2)
+    current_customer.orders.cart.update_all(:state => 2)
   end
 
 end

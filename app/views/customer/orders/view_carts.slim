@@ -4,14 +4,76 @@
     = render '/shared/header'
 
   .main-container-tile
+    .main-container.col2-left-layout
+      .container
+        .row
+          .col-md-12
+            .main
+              .row
+                .col-left.sidebar.col-md-3.col-xs-12
+                  .block.block-account.first
+                    .block-title
+                      strong
+                        span My Account
+                    .block-content
+                      ul
+                        li
+                          = link_to "Account Dashboard", customer_path 
+                        li
+                          = link_to "Change Password", edit_customer_registration_path
+                        li
+                          = link_to "Change Account Information", customer_edit_account_information_path
+                        li.current
+                          strong View Cart
+                        li 
+                          = link_to "View Orders", customer_view_orders_path
+                        li
+                          = link_to "Checkout", customer_checkout_path
 
+                .col-main.col-md-9.col-xs-12
+                  .padding-s
+                    .my-account
+                      .dashboard
+                        .page-title
+                          h1 View Cart
+                        .box-account.box-recent
+                          .box-head
+                            - if @carts.size > 0
+                              h2 Recent Cart items
+                              table#my-orders-table.data-table
+                                thead
+                                  tr.first.last
+                                    th Order #
+                                    th Date
+                                    th Ship To
+                                    th
+                                      span.nobr Order Total
+                                    th Status
+                                    th &nbsp;
+                                tbody
+                                  - @carts.each_with_index do |item, i|
+                                    tr.first.last.odd
+                                      td.order-id = item.id
+                                      td.order-date
+                                        span.nobr = item.date
+                                      td.order-ship = current_customer.firstname + current_customer.lastname
+                                      td.order-total
+                                        span.price = item.product.price
+                                      td.order-status
+                                        em Pending
+                                      td.last
+                                        span.nobr
+                                          = link_to "View all orders", customer_view_orders_path
+                            - else 
+                              h2 You don't have any items in cart
+                          = paginate @carts
   .clear
 
   .footer-container
     = render '/shared/footer'
 
 = content_for :page_footer
-  = javascript_include_tag 'home/show_category'
+  = javascript_include_tag 'customer/account'
 
 = content_for :page_header
-  = stylesheet_link_tag 'home/show_category', media: 'all'  
+  = stylesheet_link_tag 'customer/account', media: 'all'  

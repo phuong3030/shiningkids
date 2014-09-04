@@ -21,12 +21,16 @@
         ul.links
           li.first
             a href="/customer" title=("My Account")  My Account
-          li.top-car
-            a.top-link-cart href="/customer/cart" title=("My Cart")  My Cart
           li
-            a.top-link-checkout href="/customer/checkout" title="Checkout"  Checkout
-          li.last
-            a href="/customer/sign_in" title=("Log In")  Log In
+            = link_to 'Checkout', customer_checkout_path
+          - if customer_signed_in?
+            li
+              = link_to 'My Cart', customer_view_carts_path
+            li.last
+              = link_to 'Log Out', destroy_customer_session_path, :method => :delete
+          - else 
+            li.last
+              = link_to 'Log In', new_customer_session_path
   
       .clear
 
@@ -43,8 +47,11 @@
             h3 My Cart:
             .block-content
               .empty
-                | 0 item(s) -
-                span.price $0.00
+                = @carts.size
+                |  item(s) -
+                span.price 
+                  | &nbsp;
+                  = @carts.inject(0){|sum,x| sum + x.product.price}
                 .cart-content style=("display: none;") 
                   .cart-indent
                     p.subtotal
@@ -53,8 +60,8 @@
                     p.block-subtitle Recently added item(s)
                     ol#cart-sidebar.mini-products-list
                       - if @carts.size > 0
-                        - carts.collect do |cart|
-                          = render 'shared/cart_item', :cart => cart
+                        - @carts.each_with_index do |cart, i|
+                          = render 'shared/cart_item', :cart => cart if i < 3
                       - else
                         li.item
                           | You have no items in your shopping cart.
@@ -62,7 +69,7 @@
                       button.button onclick="window.location.href='/customer/checkout';" title="Checkout" type="button" 
                         span
                           span Checkout
-                      button.button onclick="window.location.href='/customer/cart';" title=("My Cart") type="button" 
+                      button.button onclick="window.location.href='/customer/view-carts';" title=("My Cart") type="button" 
                         span
                           span My Cart
 

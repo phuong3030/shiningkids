@@ -1,27 +1,72 @@
-- content_for :main_content
-	h2
-	  | Edit #{resource_name.to_s.humanize}
-	= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
-	  = devise_error_messages!
-	  div
-	    = f.label :email
-	    br/
-	    = f.email_field :email, autofocus: true
-	  - if devise_mapping.confirmable? && resource.pending_reconfirmation?
-	    div
-	      | Currently waiting confirmation for: #{resource.unconfirmed_email}
-	  div
-	    = f.label :password
-	    br/
-	    = f.password_field :password, autocomplete: "off"
-	  div
-	    = f.label :password_confirmation
-	    br/
-	    = f.password_field :password_confirmation, autocomplete: "off"
-	  div
-	    = f.label :current_password
-	    br/
-	    = f.password_field :current_password, autocomplete: "off"
-	  div= f.submit "Update"
-	= link_to "Back", :back
+= content_for :main_content
 
+  .header-bg
+    = render '/shared/header'
+
+  .main-container-tile
+    .main-container.col2-left-layout
+      .container
+        .row
+          .span12
+            .main
+              .row
+                .col-left.sidebar.col-md-3.col-xs-12
+                  .block.block-account.first
+                    .block-title
+                      strong
+                        span My Account
+                      span.toggle
+                      span.toggle
+                    .block-content
+                      ul
+                        li
+                          = link_to "Account Dashboard", customer_path 
+                        li.current
+                          strong Change Password
+                        li
+                          = link_to "Change Account Information", customer_edit_account_information_path
+                        li
+                          = link_to "View Carts", customer_view_carts_path
+                        li 
+                          = link_to "View Orders", customer_view_orders_path
+                        li
+                          = link_to "Checkout", customer_checkout_path
+
+                .col-main.col-md-9.col-xs-12
+                  .padding-s
+                    .my-account
+                      .dashboard
+                        .page-title
+                          h1 Change Password
+                          = form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
+                            = devise_error_messages!
+                            div
+                              = f.label :email
+                              br/
+                              = f.email_field :email, autofocus: true, :class => 'form-control'
+                            - if devise_mapping.confirmable? && resource.pending_reconfirmation?
+                              div
+                                | Currently waiting confirmation for: #{resource.unconfirmed_email}
+                            div
+                              = f.label :password
+                              br/
+                              = f.password_field :password, autocomplete: "off", :class => 'form-control'
+                            div
+                              = f.label :password_confirmation
+                              br/
+                              = f.password_field :password_confirmation, autocomplete: "off", :class => 'form-control'
+                            div
+                              = f.label :current_password
+                              br/
+                              = f.password_field :current_password, autocomplete: "off", :class => 'form-control'
+                            div= f.submit "Update", :class => 'btn btn-danger'
+  .clear
+
+  .footer-container
+    = render '/shared/footer'
+
+= content_for :page_footer
+  = javascript_include_tag 'customer/account'
+
+= content_for :page_header
+  = stylesheet_link_tag 'customer/account', media: 'all'  

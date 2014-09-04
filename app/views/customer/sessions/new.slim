@@ -1,19 +1,64 @@
 - content_for :main_content
-  h2 Log in
 
-  = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-    div
-      = f.label :email
-      br/
-      = f.email_field :email, autofocus: true
-    div
-      = f.label :password
-      br/
-      = f.password_field :password, autocomplete: "off"
-    - if devise_mapping.rememberable?
-      div
-        = f.check_box :remember_me
-        = f.label :remember_me
-    div= f.submit "Log in"
+  .header-bg
+    = render '/shared/header'
 
-= render "customer/shared/links"
+  .main-container-tile
+    .main-container.col1-layout
+      .container
+        .row
+          .span12
+            .main
+              .col-main
+                .padding-s
+                  .account-login
+                    .page-title
+                      h1 Login or Create an Account
+
+                    = form_for(resource, as: resource_name, url: session_path(resource_name), :id => 'login-form') do |f|
+                      .col2-set
+                        .wrapper
+                          .registered-users-wrapper
+                            .col-2.registered-users
+                              .content
+                                h2 Registered Customers
+                                p If you have an account with us, please log in.
+                                ul.form-list
+                                  li
+                                    = f.label :email, :class => 'require'
+                                      em> *
+                                      | Email Address
+                                    .input-box
+                                      = f.email_field :email, autofocus: true, :class => 'input-text required-entry validate-email', :title => "Email Address" 
+                                  li
+                                    = f.label :password, :class => 'require'
+                                      em> *
+                                      | Password
+                                    .input-box
+                                      = f.password_field :password, autocomplete: "off", :id => 'pass', :class => 'input-text required-entry validate-password', :title => 'Password'
+                                  p.required * Required Fields
+                                  .buttons-set
+                                    button#send2.button name="send" title="Login" type="submit" 
+                                      span
+                                        span Login
+
+                          .new-users-wrapper
+                            .col-1.new-users
+                              .content
+                                h2 New Customers
+                                p By creating an account with our store, you will be able to move through the checkout process faster, store multiple shipping addresses, view and track your orders in your account and more.
+                                .buttons-set
+                                  button.button onclick="window.location.href='/customer/sign_up/';" title=("Create an Account") type="button" 
+                                    span
+                                      span Create an Account
+
+    .clear
+
+  .footer-container
+    = render '/shared/footer'
+
+= content_for :page_footer
+  = javascript_include_tag 'customer/account'
+
+= content_for :page_header
+  = stylesheet_link_tag 'customer/account', media: 'all'  

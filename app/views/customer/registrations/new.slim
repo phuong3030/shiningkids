@@ -1,22 +1,74 @@
 - content_for :main_content
-	h2 Sign up
-	= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
-	  = devise_error_messages!
-	  div
-	    = f.label :email
-	    br/
-	    = f.email_field :email, autofocus: true
-	  div
-	    = f.label :password
-	    - if @validatable
-	      i
-		| (#{@minimum_password_length} characters minimum)
-	    br/
-	    = f.password_field :password, autocomplete: "off"
-	  div
-	    = f.label :password_confirmation
-	    br/
-	    = f.password_field :password_confirmation, autocomplete: "off"
-	  div= f.submit "Sign up"
-	= render "customer/shared/links"
 
+  .header-bg
+    = render '/shared/header'
+
+  .main-container-tile
+    .main-container.col1-layout
+      .container
+        .row
+          .span12
+            .main
+              .col-main
+                .padding-s
+                  .account-create
+                    .page-title
+                      h1 Create an Account 
+
+                    = form_for(resource, as: resource_name, url: registration_path(resource_name), :id => 'form-validate') do |f|
+                      .fieldset
+                        h2.legend Personal Information
+                        ul.form-list
+                          li.fields
+                            .customer-name
+                              .field.name-firstname
+                                = f.label :firstname, :class => 'required'
+                                  em> *
+                                  | First Name
+                                .input-box
+                                  = f.text_field :firstname, autofocus: true, :id => '#firstname', :class => 'input-text required-entry', :title => 'Firstname'
+                              .field.name-lastname
+                                = f.label :lastname, :class => 'required'
+                                  em> *
+                                  | Last
+                                  | Name
+                                .input-box
+                                  = f.text_field :lastname, autofocus: true, :id => '#lastname', :class => 'input-text required-entry', :title => 'Lastname'
+                          li
+                            = f.label :email, :class => 'required'
+                              em> *
+                              | Email Address
+                            .input-box
+                              = f.email_field :email, autofocus: true, :id => 'email_address', :class => 'input-text validate-email required-entry', :title => 'Email Address'
+                      .fieldset
+                        h2.legend Login Information
+                        ul.form-list
+                          li.fields
+                            .field
+                              = f.label :password, :class => 'required'
+                              .input-box
+                                = f.password_field :password, autocomplete: "off", :class => 'input-text required-entry validate-password'
+                            .field
+                              = f.label :password_confirmation, :class => 'required'
+                              .input-box
+                                = f.password_field :password_confirmation, autocomplete: "off", :class => 'input-text required-entry validate-cpassword'
+                      .buttons-set
+                        p.required * Required Fields
+                        p.back-link
+                          = link_to new_customer_session_path, :class => 'back-link' do
+                            small «
+                            | Back
+                        button.button title="Sign up" type="submit" 
+                          span
+                            span Submit
+
+  .clear
+
+  .footer-container
+    = render '/shared/footer'
+
+= content_for :page_footer
+  = javascript_include_tag 'customer/account'
+
+= content_for :page_header
+  = stylesheet_link_tag 'customer/account', media: 'all'  

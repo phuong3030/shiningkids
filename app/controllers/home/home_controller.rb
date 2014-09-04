@@ -1,10 +1,10 @@
-class Home::HomeController< ActionController::Base
+class Home::HomeController< ApplicationController
 
 	layout 'application'
 
   # GET / 
   def index
-    @new_products = Product.includes(:product_images).includes(:category).first(8)
+    @new_products = Product.includes(:product_images).includes(:category).first(8) || []
   end
 
   # GET /categories/:id

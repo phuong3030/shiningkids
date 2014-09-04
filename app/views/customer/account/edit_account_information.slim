@@ -1,0 +1,48 @@
+= content_for :main_content
+
+  .header-bg
+    = render '/shared/header'
+
+  .main-container-tile
+    .main-container.col2-left-layout
+      .container
+        .row
+          .col-md-12
+            .main
+              .row
+                .col-left.sidebar.col-md-3.col-xs-12
+                  .block.block-account.first
+                    .block-title
+                      strong
+                        span My Account
+                    .block-content
+                      ul
+                        li
+                          = link_to "Account Dashboard", customer_path 
+                        li
+                          = link_to "Change Password", edit_customer_registration_path
+                        li.current
+                          strong Change Account Information
+                        li
+                          = link_to "View Cart", customer_view_carts_path
+                        li 
+                          = link_to "View Orders", customer_view_orders_path
+                        li
+                          = link_to "Checkout", customer_checkout_path
+
+                .col-main.col-md-9.col-xs-12
+                  .padding-s
+                    .my-account
+                      .dashboard
+                        .page-title
+                          h1 Change Account Information
+  .clear
+
+  .footer-container
+    = render '/shared/footer'
+
+= content_for :page_footer
+  = javascript_include_tag 'customer/account'
+
+= content_for :page_header
+  = stylesheet_link_tag 'customer/account', media: 'all'  

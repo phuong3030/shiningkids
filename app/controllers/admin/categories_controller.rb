@@ -1,5 +1,6 @@
 class Admin::CategoriesController < ApplicationController
   before_action :set_admin_category, only: [:show, :edit, :update, :destroy]
+  before_filter :authenticate_admin!
 
   # GET /admin/categories
   def index

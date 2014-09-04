@@ -273,12 +273,14 @@ padding: 6px 0 0; }
 .block-cart-header .price{ 
   font-weight:bold; color:#333333; 
 }
-.block-cart-header .subtotal { color:#fff; padding: 15px 20px 0; }
+.block-cart-header .subtotal { color:#fff; padding: 15px 20px 0; margin:0; font-size: 12px; line-height: 18px;}
 .block-cart-header .subtotal,
 .block-cart-header .block-subtitle,
-.block-cart-header .actions {background:#333333;}
+.block-cart-header .actions {background:#333333; margin:0;}
 .block-cart-header .subtotal .label{ 
+  font-size: 100%;
   font-weight:bold;
+  padding: 0;
 }
 .block-cart-header .subtotal .price { float:right; color:#fff; }
 .block-cart-header .mini-products-list .product-image:hover {border-color:#333333} 
@@ -514,4 +516,25 @@ ul.sf-menu li li li.sfHover ul {
   .sf-menu-phone {margin: 0;}
 }
 
+.mini-products-list li { padding:5px 0; }
+.mini-products-list .product-control-buttons { overflow:hidden; position:relative; margin-bottom:5px; }
+.mini-products-list .product-image { float:left; width:90px;background:#fff; margin-right: 10px; }
+.mini-products-list .product-image img {max-width:100%;}
+.mini-products-list .product-details { padding-top:10px; overflow:hidden; }
+.mini-products-list .product-details h4 { font-size:1em; font-weight:bold; margin:0; }
+.mini-products-list .product-name { margin-left:10px; display:block; overflow:hidden;}
+.block-cart .mini-products-list .product-name,
+.block-cart .mini-products-list .product-details .nobr small { word-wrap:break-word; }
+.block-cart .mini-products-list .product-details .nobr { white-space:normal !important; }
 
+/* Block: Account */
+.block-account ul li{ padding-bottom:5px;}
+
+/* Block: Currency Switcher */
+.block-currency {}
+.block-currency select { width:100%; border:1px solid #888; }
+.btn-remove { display:block; width:10px; height:10px; font-size:0; line-height:0; background:url(/images/btn_remove.gif) 0 0 no-repeat; font-size: 0; overflow:hidden; margin-left: 13px; }
+.block-cart-header .product-details .price {
+  font-weight: bold;
+  color: #333333 !important;
+}
