@@ -15,7 +15,7 @@ set(:env, 'production') unless exists?(:env)
 set(:branch, 'master') unless exists?(:branch)
 
 set :use_sudo, false
-set :domain, '128.199.156.230'
+set :domain, '128.199.237.95'
 set :user, "deploy"
 set :deploy_to, "/home/deploy/#{application}"
 set :deploy_env, 'production'
