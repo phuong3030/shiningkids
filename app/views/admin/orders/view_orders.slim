@@ -44,7 +44,6 @@
                                     th
                                       span.nobr Order Total
                                     th Status
-                                    th &nbsp;
                                 tbody
                                   - @orders.each_with_index do |item, i|
                                     tr.first.last.odd
@@ -56,9 +55,6 @@
                                         span.price = item.product.price
                                       td.order-status
                                         em Ordered
-                                      td.last
-                                        span.nobr
-                                          = link_to "View all orders", customer_view_orders_path
                             - else 
                               h2 You don't have any recent orders
                           = paginate @orders
