@@ -6,7 +6,7 @@ li.item.col-md-3.col-xs-12
       = content_tag :i, nil, :class => 'fa fa-2x fa-shopping-cart'
     button.button title="Details" type="button" onclick="window.location.href = '/product/#{product.id}';"
       span
-        span Details 
+        span = t 'shopping.details' 
   .product-shop
     h3.product-name
       = link_to product.name, product_detail_path(product.id), :title => product.name

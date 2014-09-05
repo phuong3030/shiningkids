@@ -1,2 +1,22 @@
 vi:
-  hello: "Hello world"
+  homepage:
+    new_product: 'Sản Phẩm Mới'
+    my_account: 'Tài Khoản'
+    checkout: 'Đặt Hàng'
+    my_cart: 'Giỏ Hàng'
+    login: 'Đăng nhập'
+    logout: 'Đăng xuất'
+    item: ' sản phẩm'
+    subtotal: 'Tổng số tiền:'
+    recent_item: 'Sản phẩm trong giỏ'
+    empty: 'Không có sản phẩm nào trong giỏ.'
+  customer:
+    dashboard: 'Bảng Tin'
+    change_pass: 'Đổi Mật Khẩu'
+    change_info: 'Thông Tài Khoản'
+    view_cart: 'Xem Giỏ Hàng'
+    view_orders: 'Xem Đơn Hàng'
+    password: 'Mật Khẩu'
+  shopping:
+    add_to_cart: 'Cho vào Giỏ Hàng'
+    details: 'Chi Tiết'

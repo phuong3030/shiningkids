@@ -1,2 +1,23 @@
 en:
-  hello: "Hello world"
+  homepage:
+    new_product: 'New Products'
+    my_account: 'My Account'
+    checkout: 'Checkout'
+    my_cart: 'My Cart'
+    login: 'Login'
+    logout: 'Logout'
+    item: ' item(s)'
+    subtotal: 'Cart Subtotal:'
+    recent_item: 'Recently added item(s)'
+    empty: 'You have no items in your shopping cart.'
+  customer:
+    dashboard: 'Account Dashboard'
+    change_pass: 'Change Password'
+    change_info: 'Change Account Information'
+    view_cart: 'View Cart'
+    view_orders: 'View Orders'
+    password: 'Password'
+  shopping: 
+    add_to_cart: 'Add to Cart'
+    details: 'Details'
+    
