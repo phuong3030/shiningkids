@@ -30,13 +30,13 @@ set :scm_verbose, true
 namespace :deploy do
   task :start_server do 
     run  <<-CMD
-      cd /home/deploy/shiningkids/current; bundle exec thin start -C thin.yml"
+      cd /home/deploy/shiningkids/current; bundle exec thin start -C thin.yml
     CMD
   end
 
   task :stop_server do
     run  <<-CMD
-      cd /home/deploy/shiningkids/current; bundle exec thin stop -C thin.yml"
+      cd /home/deploy/shiningkids/current; bundle exec thin stop -C thin.yml
     CMD
   end
   
