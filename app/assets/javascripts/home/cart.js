@@ -1,4 +1,5 @@
 (function ($) {
+  var cartContent = $('.cart-content');
 
   $('.btn-cart').click(function (e) {
 
@@ -23,6 +24,33 @@
         console.log(data);
       }
     });
+  });
+
+  $('.btn-checkout').click(function (e) {
+     $.ajax({
+      url: window.location.origin + '/customer/checkout',
+      type: 'POST',
+      dataType: 'json',
+      headers: {
+        "X-Requested-With": "XMLHttpRequest",
+        "HTTP_X_REQUESTED_WITH": "XMLHttpRequest"
+      },
+      data: { 
+        
+      },
+      error: function (xhr, status, error) {
+        alert('Server error!');
+      },
+      success: function(data) { 
+        window.location.href = '/customer/view-orders';
+      }
+    });
+  });
+
+  $('.block-cart-header').click(function (e) {
+
+    cartContent.slideToggle();
+     
   });
 
   function buildCart (carts) {

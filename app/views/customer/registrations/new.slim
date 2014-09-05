@@ -40,6 +40,19 @@
                               | Email Address
                             .input-box
                               = f.email_field :email, autofocus: true, :id => 'email_address', :class => 'input-text validate-email required-entry', :title => 'Email Address'
+                          li
+                            = f.label :phone, :class => 'required'
+                              em> *
+                              | Phone
+                            .input-box
+                              = f.text-field :phone, autofocus: true, :id => 'phone', :class => 'input-text required-entry', :title => 'Phone'
+                          li
+                            = f.label :address, :class => 'required'
+                              em> *
+                              | Address
+                            .input-box
+                              = f.text-field :address, autofocus: true, :id => 'address', :class => 'input-text required-entry', :title => 'Address'
+
                       .fieldset
                         h2.legend Login Information
                         ul.form-list

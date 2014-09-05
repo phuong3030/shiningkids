@@ -11,6 +11,8 @@ class DeviseCreateUsers < ActiveRecord::Migration
       t.string :type
       t.string :firstname
       t.string :lastname
+      t.string :phone
+      t.string :address
 
       t.timestamps
     end

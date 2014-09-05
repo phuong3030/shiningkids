@@ -18,7 +18,7 @@ class Customer::OrdersController < ApplicationController
     @carts = current_customer.orders.includes(:product).cart || []
   end
 
-  # POST /customer/add-to_cart
+  # POST /customer/add-to-cart
   def add_to_cart
     begin
       order = Order.new(
@@ -39,6 +39,15 @@ class Customer::OrdersController < ApplicationController
   # GET /customer/make-an-order
   def make_an_order
     current_customer.orders.cart.update_all(:state => 2)
+    render :json => { code: 200 } if request.xhr? >= 0
+  end
+
+  # DELETE /customer/remove-cart
+  def remove_cart
+    cart = Order.find(params[:id])
+
+    cart.destroy
+    redirect_to customer_path
   end
 
 end
