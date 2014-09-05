@@ -29,11 +29,15 @@ set :scm_verbose, true
 
 namespace :deploy do
   task :start_server do 
-    run "thin start -C '/home/deploy/#{application}/current/thin.yml"
+    run  <<-CMD
+      cd /home/deploy/shiningkids/current; bundle exec thin start -C thin.yml"
+    CMD
   end
 
   task :stop_server do
-    run "thin stop -C '/home/deploy/#{application}/current/thin.yml"
+    run  <<-CMD
+      cd /home/deploy/shiningkids/current; bundle exec thin stop -C thin.yml"
+    CMD
   end
   
   task :bundle_gems do 
@@ -41,5 +45,5 @@ namespace :deploy do
   end
 end
 
-#before "deploy", "deploy:stop_server"
+before "deploy", "deploy:stop_server"
 after "deploy", "deploy:migrate", "deploy:start_server"
