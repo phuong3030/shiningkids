@@ -7,10 +7,10 @@ li.item
         = link_to product.name, product_detail_path(product), :title => product.name
       .desc.std
         p = product.description
-        = link_to "Learn More", product_detail_path(product), :class => 'link-learn', :title => product.name
+        = link_to t "shopping.details", product_detail_path(product), :class => 'link-learn', :title => product.name
       .price-box
         span#product-price-1.regular-price
           span.price = product.price
       button.button.btn-cart title=("Add to Cart") type="button" data-id="#{product.id}" 
         span
-          = content_tag :span, "Add to Cart"
+          = content_tag :span, t "shopping.add_to_cart"

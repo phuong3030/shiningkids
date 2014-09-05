@@ -9,34 +9,34 @@
             i.fa.fa-chevron-circle-down
           ul
             li
-              a href="#" title="vi_VI" 
+              = link_to_unless_current "vi", :locale => 'vi' 
                 | VietNam
                 span vi
             li
-              a href="#" title="en_US"
+              = link_to_unless_current "en", :locale => 'en'
                 | English
                 span en
 
       .header-links
         ul.links
           li.first
-            a href="/customer" title=("My Account")  My Account
+            = link_to t('homepage.my_account'), customer_path
           li
-            = link_to 'Checkout', customer_checkout_path
+            = link_to t('homepage.checkout'), customer_checkout_path
           - if customer_signed_in?
             li
-              = link_to 'My Cart', customer_view_carts_path
+              = link_to t('homepage.my_cart'), customer_view_carts_path
             li.last
-              = link_to 'Log Out', destroy_customer_session_path, :method => :delete
+              = link_to t('homepage.logout'), destroy_customer_session_path, :method => :delete
           - else 
             li.last
-              = link_to 'Log In', new_customer_session_path
+              = link_to t('homepage.login'), new_customer_session_path
   
       .clear
 
       h1.logo
         strong Shining Kids
-        a href="/" title=("Shining Kids") 
+        = link_to root_path do
           img alt=("Shining Kids") src="/images/logo.gif" 
 
       .quick-access
@@ -44,34 +44,33 @@
         .row-2
           .block-cart-header
             i.fa.fa-chevron-circle-down
-            h3 My Cart:
+            h3 = t('homepage.my_cart') + ':'
             .block-content
               .empty
                 = @carts.size
-                |  item(s) -
+                span = t('homepage.item') + ' -'
                 span.price 
                   | &nbsp;
                   = @carts.inject(0){|sum,x| sum + x.product.price}
                 .cart-content style=("display: none;") 
                   .cart-indent
                     p.subtotal
-                      span.label Cart Subtotal:
+                      span.label = t "homepage.subtotal"
                       span.price 0
-                    p.block-subtitle Recently added item(s)
+                    p.block-subtitle = t "homepage.recent_item" 
                     ol#cart-sidebar.mini-products-list
                       - if @carts.size > 0
                         - @carts.each_with_index do |cart, i|
                           = render 'shared/cart_item', :cart => cart if i < 3
                       - else
-                        li.item
-                          | You have no items in your shopping cart.
+                        li.item = t "homepage.empty"
                     .actions
                       button.button onclick="window.location.href='/customer/checkout';" title="Checkout" type="button" 
                         span
-                          span Checkout
+                          span = t 'homepage.checkout'
                       button.button onclick="window.location.href='/customer/view-carts';" title=("My Cart") type="button" 
                         span
-                          span My Cart
+                          span = t 'homepage.my_cart'
 
         form#search_mini_form action="search.html" method="get" 
           .form-search

@@ -2,6 +2,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_filter :configure_permitted_parameters, if: :devise_controller?
   before_filter :show_cart
+  before_action :set_locale
 
   def after_sign_in_path_for(resource)
     case resource.type
@@ -14,6 +15,8 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  private
+                          
   def configure_permitted_parameters
     devise_parameter_sanitizer.for(:sign_in) { |u| u.permit(:email, :password, :remember_me) }
     devise_parameter_sanitizer.for(:sign_up) { |u| u.permit(:firstname, :lastname, :phone, :address, :email, :password, :password_confirmation) }
@@ -25,5 +28,13 @@ class ApplicationController < ActionController::Base
     else
       @carts = []
     end
+  end
+
+  def set_locale
+    I18n.locale = params[:locale] if params[:locale].present?
+  end
+
+  def default_url_options(options = {})
+    {:locale => I18n.locale}
   end
 end

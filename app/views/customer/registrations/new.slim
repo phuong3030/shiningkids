@@ -26,32 +26,32 @@
                                   em> *
                                   | First Name
                                 .input-box
-                                  = f.text_field :firstname, autofocus: true, :id => '#firstname', :class => 'input-text required-entry', :title => 'Firstname'
+                                  = f.text_field :firstname, autofocus: true, :id => 'firstname', :class => 'input-text required-entry', :title => 'Firstname'
                               .field.name-lastname
                                 = f.label :lastname, :class => 'required'
                                   em> *
                                   | Last
                                   | Name
                                 .input-box
-                                  = f.text_field :lastname, autofocus: true, :id => '#lastname', :class => 'input-text required-entry', :title => 'Lastname'
+                                  = f.text_field :lastname, autofocus: true, :id => 'lastname', :class => 'input-text required-entry', :title => 'Lastname'
+                          li
+                            = f.label :phone, :class => 'required'
+                              em> *
+                              | Phone
+                            .input-box
+                              = f.text_field :phone, autofocus: true, :id => 'phone', :class => 'input-text required-entry', :title => 'Phone'
+                          li
+                            = f.label :address, :class => 'required'
+                              em> *
+                              | Address
+                            .input-box
+                              = f.text_field :address, autofocus: true, :id => 'address', :class => 'input-text required-entry', :title => 'Address'
                           li
                             = f.label :email, :class => 'required'
                               em> *
                               | Email Address
                             .input-box
                               = f.email_field :email, autofocus: true, :id => 'email_address', :class => 'input-text validate-email required-entry', :title => 'Email Address'
-                          li
-                            = f.label :phone, :class => 'required'
-                              em> *
-                              | Phone
-                            .input-box
-                              = f.text-field :phone, autofocus: true, :id => 'phone', :class => 'input-text required-entry', :title => 'Phone'
-                          li
-                            = f.label :address, :class => 'required'
-                              em> *
-                              | Address
-                            .input-box
-                              = f.text-field :address, autofocus: true, :id => 'address', :class => 'input-text required-entry', :title => 'Address'
 
                       .fieldset
                         h2.legend Login Information

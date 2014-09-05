@@ -7,30 +7,11 @@
     .main-container.col2-left-layout
       .container
         .row
-          .span12
+          .col-md-12
             .main
               .row
                 .col-left.sidebar.col-md-3.col-xs-12
-                  .block.block-account.first
-                    .block-title
-                      strong
-                        span My Account
-                      span.toggle
-                      span.toggle
-                    .block-content
-                      ul
-                        li
-                          = link_to "Account Dashboard", customer_path 
-                        li.current
-                          strong Change Password
-                        li
-                          = link_to "Change Account Information", customer_edit_account_information_path
-                        li
-                          = link_to "View Carts", customer_view_carts_path
-                        li 
-                          = link_to "View Orders", customer_view_orders_path
-                        li
-                          = link_to "Checkout", customer_checkout_path
+                  = render 'customer/shared/sidebar'
 
                 .col-main.col-md-9.col-xs-12
                   .padding-s

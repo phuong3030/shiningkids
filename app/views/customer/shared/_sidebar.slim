@@ -1,0 +1,18 @@
+.block.block-account.first
+  .block-title
+    strong
+      span = t 'homepage.my_account'
+  .block-content
+    ul
+      li
+        = link_to t("customer.dashboard"), customer_path 
+      li
+        = link_to t("customer.change_pass"), edit_customer_registration_path
+      li
+        = link_to t("customer.change_info"), customer_edit_account_information_path
+      li
+        = link_to t("customer.view_cart"), customer_view_carts_path
+      li 
+        = link_to t("customer.view_orders"), customer_view_orders_path
+      li
+        = link_to t("customer.checkout"), customer_checkout_path
