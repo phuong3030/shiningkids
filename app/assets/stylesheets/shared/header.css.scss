@@ -538,3 +538,31 @@ ul.sf-menu li li li.sfHover ul {
   font-weight: bold;
   color: #333333 !important;
 }
+
+.header-button ul {
+  display:none;
+  background:#333333;
+  text-align:left !important;
+  position:absolute;
+  right:0px;
+  top:32px;
+  padding:0;
+  z-index:999;
+}
+.header-button ul li {
+  float: none !important;
+  display:block;
+  padding-left:0px;
+}
+.header-button ul li a {
+  display:block !important;
+  background:#6e6e6e;
+  font-size:14px;
+  line-height:17px;
+  color:#fff !important;
+  padding: 5px 10px;
+  min-height: 18px;
+}
+.header-button ul li a:hover {background-color:#303030;}
+.header-button ul li span {display:none;}
+
