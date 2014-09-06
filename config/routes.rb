@@ -40,6 +40,8 @@ Rails.application.routes.draw do
       get '/about-us', :to => 'home#about'
     end
 
+    get '', :to => redirect("/#{I18n.default_locale}")
+
   end
 
 end
