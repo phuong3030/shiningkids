@@ -7,7 +7,7 @@
     .main-container.col1-layout
       .container
         .row
-          .span12
+          .col-md-12
             .main
               .col-main
                 .padding-s
@@ -48,7 +48,7 @@
                                 h2 New Customers
                                 p By creating an account with our store, you will be able to move through the checkout process faster, store multiple shipping addresses, view and track your orders in your account and more.
                                 .buttons-set
-                                  button.button onclick="window.location.href='/customer/sign_up/';" title=("Create an Account") type="button" 
+                                  button.button onclick="window.location.replace(window.location.origin + '/' + window.location.pathname.split('/')[1] + '/customer/sign_up/');" title=("Create an Account") type="button" 
                                     span
                                       span Create an Account
 

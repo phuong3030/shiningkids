@@ -5,6 +5,7 @@ class CreateProductImages < ActiveRecord::Migration
 
       t.integer :img_type
       t.attachment :image
+      t.attachment :thumb
 
       t.timestamps
     end

@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  scope (:locale), :locale => /#{I18n.available_locales.join("|")}/ do 
+  scope ":locale", :locale => /#{I18n.available_locales.join("|")}/ do 
 
     devise_for :customer 
     devise_for :admin, :skip => [:registrations] 
@@ -42,6 +42,6 @@ Rails.application.routes.draw do
 
   end
 
-  get '', :to => redirect("/#{I18n.locale}")
+  get '', :to => redirect("/#{I18n.default_locale}")
 
 end

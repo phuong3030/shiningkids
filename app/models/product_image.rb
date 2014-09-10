@@ -5,6 +5,10 @@ class ProductImage < ActiveRecord::Base
         :path => ":rails_root/public/images/product_image/:img_type/:id/:basename.:extension",
         :url => "/images/product_image/:img_type/:id/:basename.:extension"
 
-  validates_attachment_content_type :image, :content_type => ["image/jpg", "image/jpeg", "image/png"]
-  validates_attachment_size :image, :less_than => 3.megabytes
+  has_attached_file :thumb, 
+        :path => ":rails_root/public/images/product_image/:img_type/thumb/:id/:basename.:extension",
+        :url => "/images/product_image/:img_type/:id/:basename.:extension"
+
+  validates_attachment_content_type :image, :thumb, :content_type => ["image/jpg", "image/jpeg", "image/png"]
+  validates_attachment_size :image, :thumb, :less_than => 3.megabytes
 end
