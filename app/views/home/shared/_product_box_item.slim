@@ -4,9 +4,9 @@ li.item.col-md-3.col-xs-12
   .button-block
     button.button.btn-cart title=("Add to Cart") type="button" data-id="#{product.id}"
       = content_tag :i, nil, :class => 'fa fa-2x fa-shopping-cart'
-    button.button title="Details" type="button" onclick="window.location.href = '/product/#{product.id}';"
+    button.button title="Details" type="button" onclick="window.location.replace(window.location.origin + '/' + window.location.pathname.split('/')[1] + '/product/#{product.id}');"
       span
-        span = t 'shopping.details' 
+        span = t('shopping.details')
   .product-shop
     h3.product-name
       = link_to product.name, product_detail_path(product.id), :title => product.name

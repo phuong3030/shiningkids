@@ -42,4 +42,6 @@ Rails.application.routes.draw do
 
   end
 
+  get '', :to => redirect("/#{I18n.default_locale}")
+
 end

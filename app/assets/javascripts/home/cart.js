@@ -4,7 +4,7 @@
   $('.btn-cart').click(function (e) {
 
     $.ajax({
-      url: window.location.origin + '/customer/cart',
+      url: window.location.origin + '/' + window.location.pathname.split('/')[1] +'/customer/cart',
       type: 'POST',
       dataType: 'json',
       headers: {
@@ -16,7 +16,8 @@
       },
       error: function (xhr, status, error) {
 
-        window.location.href = '/customer/sign_in';
+        window.location.replace(window.location.origin + '/' + 
+          window.location.pathname.split('/')[1] + '/customer/sign_in');
       },
       success: function(data) { 
       
@@ -28,7 +29,7 @@
 
   $('.btn-checkout').click(function (e) {
      $.ajax({
-      url: window.location.origin + '/customer/checkout',
+      url: window.location.origin + '/' +window.location.pathname.split('/')[1] + '/customer/checkout',
       type: 'POST',
       dataType: 'json',
       headers: {
@@ -42,7 +43,9 @@
         alert('Server error!');
       },
       success: function(data) { 
-        window.location.href = '/customer/view-orders';
+
+        window.location.replace(window.location.origin + '/' +
+          window.location.pathname.split('/')[1] + '/customer/view-orders');
       }
     });
   });

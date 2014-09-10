@@ -55,22 +55,22 @@
                 .cart-content style=("display: none;") 
                   .cart-indent
                     p.subtotal
-                      span.label = t "homepage.subtotal"
+                      span.label = t("homepage.subtotal")
                       span.price 0
-                    p.block-subtitle = t "homepage.recent_item" 
+                    p.block-subtitle = t("homepage.recent_item")
                     ol#cart-sidebar.mini-products-list
                       - if @carts.size > 0
                         - @carts.each_with_index do |cart, i|
                           = render 'shared/cart_item', :cart => cart if i < 3
                       - else
-                        li.item = t "homepage.empty"
+                        li.item = t("homepage.empty")
                     .actions
-                      button.button onclick="window.location.href='/customer/checkout';" title="Checkout" type="button" 
+                      button.button onclick="window.location.replace(window.location.origin + '/' + window.location.pathname.split('/')[1] + '/customer/checkout');" title="Checkout" type="button" 
                         span
-                          span = t 'homepage.checkout'
-                      button.button onclick="window.location.href='/customer/view-carts';" title=("My Cart") type="button" 
+                          span = t('homepage.checkout')
+                      button.button onclick="window.location.replace(window.location.origin + '/' + window.location.pathname.split('/')[1] + '/customer/view-carts');" title=("My Cart") type="button" 
                         span
-                          span = t 'homepage.my_cart'
+                          span = t('homepage.my_cart')
 
         form#search_mini_form action="search.html" method="get" 
           .form-search
