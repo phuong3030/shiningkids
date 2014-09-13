@@ -22,7 +22,7 @@
                             .col-2.registered-users
                               .content
                                 h2 = t('homepage.registered_cus')
-                                - if I18n.locale == 'en'
+                                - if I18n.locale == :en
                                   p If you have an account with us, please log in.
                                 - else
                                   p Vui lòng đăng nhập trong trường hợp đã có tài khoản.
@@ -49,7 +49,7 @@
                             .col-1.new-users
                               .content
                                 h2 = t('homepage.new_customer') 
-                                - if I18n.locale == 'en'
+                                - if I18n.locale == :en
                                   p By creating an account with our store, you will be able to move through the checkout process faster, store multiple shipping addresses, view and track your orders in your account and more.
                                 - else 
                                   p Bằng cách tạo một tài khoản với cửa hàng của chúng tôi, bạn sẽ có thể thực hiện quá trình thanh toán nhanh hơn, xem và theo dõi đơn đặt hàng của bạn trong tài khoản của bạn và nhiều chức năng khác.

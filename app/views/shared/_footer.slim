@@ -23,10 +23,17 @@
             h4 = t('homepage.contacts') 
             .footer-col-content
               p
-                i.fa.fa-map-marker
-                | Company Inc., 8901 Marmora Road,
-                | Glasgow, D04 89GR
+                - if I18n.locale == :en
+                  i.fa.fa-map-marker
+                  | JSC Investment Consultant Thanh Nam,
+                  br
+                  | No 26 K3, Nguyen Phong Sac, Cau Giay, Ha Noi
+                - else 
+                  i.fa.fa-map-marker
+                  | Công ty Cổ phần Tư vấn Đầu tư Thành Nam,
+                  br
+                  | Số 26 K3, Nguyễn Phong Sắc, Cầu Giấy, Hà Nội
               p.tel 
                 i.fa.fa-phone
-                | Phone: (800)2345-6789
+                | Phone: (043)3787-8631
         .clear

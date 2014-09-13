@@ -1,35 +1,5 @@
 .banners
   .header-container
-    .tbanner.banner1
-      = link_to group_products_path(1) do 
-        .b_holder
-          h2
-            | Women’s
-            strong Dresses
-          p
-            | Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut
-            | labore
-        .link.icon-chevron-sign-right &nbsp;
-        img alt="" src="images/banner1.jpg" 
-    .tbanner.banner2
-      = link_to group_products_path(2) do 
-        .b_holder
-          h2
-            | Women’s
-            strong Shoes
-          p
-            | Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut
-            | labore
-        .link.icon-chevron-sign-right &nbsp;
-        img alt="" src="images/banner2.jpg" 
-    .tbanner.banner3
-      = link_to group_products_path(3) do 
-        .b_holder
-          h2
-            | Women’s
-            strong Jackets
-          p
-            | Lorem ipsum dolor sit amet conse ctetur adipisicing elit, sed do eiusmod tempor incididunt ut
-            | labore
-        .link.icon-chevron-sign-right &nbsp;
-        img alt="" src="images/banner3.jpg" 
+    - if @category_banner.size > 2 
+      - @category_banner[0..2].each_with_index do |banner, i|
+        = render 'home/home/category_banner_item', :i => i, :banner => banner

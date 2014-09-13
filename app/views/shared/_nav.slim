@@ -1,21 +1,24 @@
 .container
   .row
     ul#nav.sf-menu.sf-js-enabled
-      li.level0.nav-1.first.level-top
-        a.level-top href="accessories.html" 
-          span Accessories
-      li.level0.nav-2.level-top
-        a.level-top href="#" 
-          span Activewear
-      li.level0.nav-3.level-top
-        a.level-top href="#" 
-          span Casual Shirts
-      li.level0.nav-4.level-top
-        a.level-top href="#" 
-          span Jeans &amp; Pants
-      li.level0.nav-5.level-top.parent
-        a.level-top href="#" 
-          span Outerwear
-      li.level0.nav-6.last.level-top
-        a.level-top href="#" 
-          span Pajamas &amp; Robes
+      - if @category_banner.size > 0
+        - @category_banner.collect do |nav_item| 
+          = content_tag :li, :class => (current_page?(group_products_path(nav_item)) ? 'active' : '') 
+            = link_to group_products_path(nav_item) do 
+              span = nav_item.name
+      - else 
+        li.level0.nav-2.level-top
+          a.level-top href="#" 
+            span Activewear
+        li.level0.nav-3.level-top
+          a.level-top href="#" 
+            span Casual Shirts
+        li.level0.nav-4.level-top
+          a.level-top href="#" 
+            span Jeans &amp; Pants
+        li.level0.nav-5.level-top.parent
+          a.level-top href="#" 
+            span Outerwear
+        li.level0.nav-6.last.level-top
+          a.level-top href="#" 
+            span Pajamas &amp; Robes

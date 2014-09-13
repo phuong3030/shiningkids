@@ -4,7 +4,9 @@ class CreateProducts < ActiveRecord::Migration
       t.belongs_to :category
 
       t.string :name
+      t.string :name_vi
       t.float :price
+      t.string :stock_unit
       t.float :saleoff
       t.string :size
       t.string :color
