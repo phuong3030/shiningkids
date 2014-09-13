@@ -10,7 +10,8 @@ class CreateProducts < ActiveRecord::Migration
       t.float :saleoff
       t.string :size
       t.string :color
-      t.string :description
+      t.text :description
+      t.text :description_vi
 
       t.timestamps
     end

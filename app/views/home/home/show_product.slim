@@ -15,17 +15,25 @@
                     .product-view
                       .product-essential
                         .product-img-box
-                          p.product-image.cloud-zoom rel="transparentImage: 'data:image/gif;base64,R0lGODlhAQABAID/AMDAwAAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==', useWrapper: false, showTitle: true, zoomWidth:'300', zoomHeight:'400', adjustY:0, adjustX:10"
-                            /= image_tag @product.product_images[
+                          - if @product.product_images.size > 0 
+                            = content_tag :p, :class => 'product-image cloud-zoom', :id => 'zoom1', :href => @product.product_images[0].image.url, :rel => "useWrapper: false, showTitle: true, zoomWidth:'300', zoomHeight:'400', adjustY:0, adjustX:10"
+                              = image_tag @product.product_images[0].thumb.url, :id => 'zoom1', :class => 'cloudzoom', :'data-cloudzoom' => ("zoomImage: " + @product.product_images[0].image.url + ", position: 'inside'")
+                          - else 
+                            p.product-image.cloud-zoom#zoom1 rel="transparentImage: 'data:image/gif;base64,R0lGODlhAQABAID/AMDAwAAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==', useWrapper: false, showTitle: true, zoomWidth:'300', zoomHeight:'400', adjustY:0, adjustX:10"
+                              /= image_tag @product.product_images[0] 
+
                           span
                           p
                           .more-views
                             .container-slider
-                              .tumbSlider-none
-                                ul.slider
-                                  li
-                                    a href="" 
-                                      img src="" 
+                              .tumbSlider
+                                - if @product.product_images.size > 0 
+                                  ul.slider
+                                    - @product.product_images.collect do |image|
+                                      li 
+                                        = link_to image.image.url, :class => 'cloud-zoom-gallery', :rel => ("useZoom: 'zoom1', smallImage: '" + image.thumb.url + "', zoomImage: '" + image.image.url + "' , position: 'inside'") do
+                                          = image_tag image.thumb.url
+
                         .product-shop
                           .product-name
                             h1 = @product.name

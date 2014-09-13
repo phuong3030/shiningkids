@@ -15,7 +15,8 @@ ActiveRecord::Schema.define(version: 20140827153915) do
 
   create_table "categories", force: true do |t|
     t.string   "name"
-    t.string   "description"
+    t.string   "name_vi"
+    t.text     "description"
     t.string   "image_file_name"
     t.string   "image_content_type"
     t.integer  "image_file_size"
@@ -52,11 +53,14 @@ ActiveRecord::Schema.define(version: 20140827153915) do
   create_table "products", force: true do |t|
     t.integer  "category_id"
     t.string   "name"
+    t.string   "name_vi"
     t.float    "price"
+    t.string   "stock_unit"
     t.float    "saleoff"
     t.string   "size"
     t.string   "color"
-    t.string   "description"
+    t.text     "description"
+    t.text     "description_vi"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
