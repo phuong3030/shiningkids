@@ -12,4 +12,12 @@ class Product < ActiveRecord::Base
       read_attribute('name_' + I18n.locale.to_s)
     end
   end
+
+  def description
+    if I18n.locale == :en 
+      read_attribute :description
+    else
+      read_attribute('name_' + I18n.locale.to_s)
+    end
+  end
 end

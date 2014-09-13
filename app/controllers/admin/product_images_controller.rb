@@ -55,7 +55,7 @@ class Admin::ProductImagesController < ApplicationController
   end
 
   def product_image_params
-    params.require(:product_image).permit(:img_type, :image, :product_id)
+    params.require(:product_image).permit(:img_type, :image, :product_id, :thumb)
   end
 
 end

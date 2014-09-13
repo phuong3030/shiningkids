@@ -1,0 +1,8 @@
+= content_tag :div, :class => ('tbanner banner' + i.to_s)
+  = link_to group_products_path(banner) do 
+    .b_holder
+      h2 = banner.name
+        strong = banner.btype
+      p = banner.description
+    .link.icon-chevron-sign-right &nbsp;
+    = image_tag banner.image.url, :alt => banner.name
