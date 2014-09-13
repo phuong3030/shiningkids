@@ -10,6 +10,11 @@ vi:
     subtotal: 'Tổng số tiền:'
     recent_item: 'Sản phẩm trong giỏ'
     empty: 'Không có sản phẩm nào trong giỏ.'
+    contacts: 'Liên hệ'
+    login_create_account: 'Đăng nhập hoặc tạo tài khoản mới'
+    registered_cus: 'ĐÃ CÓ TÀI KHOẢN'
+    new_customer: 'KHÁCH HÀNG MỚI'
+    create_an_acocunt: 'Tạo tài khoản mới'
   customer:
     dashboard: 'Bảng Tin'
     change_pass: 'Đổi Mật Khẩu'
