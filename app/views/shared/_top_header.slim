@@ -5,16 +5,17 @@
       .header-buttons
         .header-button.lang-list
           a href="#" 
-            | vi
+            - if I18n.locale == :en
+              | en
+            - else 
+              | vi
             i.fa.fa-chevron-circle-down
           ul
             li
               = link_to_unless_current "vi", :locale => 'vi' 
-                | VietNam
                 span vi
             li
               = link_to_unless_current "en", :locale => 'en'
-                | English
                 span en
 
       .header-links

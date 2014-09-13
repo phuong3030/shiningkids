@@ -3,6 +3,7 @@ class ApplicationController < ActionController::Base
   before_filter :configure_permitted_parameters, if: :devise_controller?
   before_filter :show_cart
   before_action :set_locale
+  before_action :set_menu
 
   def after_sign_in_path_for(resource)
     case resource.type
@@ -28,6 +29,10 @@ class ApplicationController < ActionController::Base
     else
       @carts = []
     end
+  end
+
+  def set_menu 
+    @category_banner = Category.first(6) || []
   end
 
   def set_locale

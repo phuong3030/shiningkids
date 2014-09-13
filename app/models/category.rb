@@ -9,4 +9,13 @@ class Category < ActiveRecord::Base
 
   validates_attachment_content_type :image, :content_type => ["image/jpg", "image/jpeg", "image/png"]
   validates_attachment_size :image, :less_than => 3.megabytes
+
+  def name
+    if I18n.locale == :en 
+      read_attribute :name
+    else
+      read_attribute('name_' + I18n.locale.to_s)
+    end
+  end
+
 end
