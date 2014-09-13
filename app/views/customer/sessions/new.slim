@@ -13,7 +13,7 @@
                 .padding-s
                   .account-login
                     .page-title
-                      h1 Login or Create an Account
+                      h1 = t('homepage.login_create_account')
 
                     = form_for(resource, as: resource_name, url: session_path(resource_name), :id => 'login-form') do |f|
                       .col2-set
@@ -21,22 +21,25 @@
                           .registered-users-wrapper
                             .col-2.registered-users
                               .content
-                                h2 Registered Customers
-                                p If you have an account with us, please log in.
+                                h2 = t('homepage.registered_cus')
+                                - if I18n.locale == 'en'
+                                  p If you have an account with us, please log in.
+                                - else
+                                  p Vui lòng đăng nhập trong trường hợp đã có tài khoản.
                                 ul.form-list
                                   li
                                     = f.label :email, :class => 'require'
                                       em> *
-                                      | Email Address
+                                      | Email:
                                     .input-box
                                       = f.email_field :email, autofocus: true, :class => 'input-text required-entry validate-email', :title => "Email Address" 
                                   li
                                     = f.label :password, :class => 'require'
                                       em> *
-                                      | Password
+                                      | Password:
                                     .input-box
                                       = f.password_field :password, autocomplete: "off", :id => 'pass', :class => 'input-text required-entry validate-password', :title => 'Password'
-                                  p.required * Required Fields
+                                  p.required * Required 
                                   .buttons-set
                                     button#send2.button name="send" title="Login" type="submit" 
                                       span
@@ -45,12 +48,15 @@
                           .new-users-wrapper
                             .col-1.new-users
                               .content
-                                h2 New Customers
-                                p By creating an account with our store, you will be able to move through the checkout process faster, store multiple shipping addresses, view and track your orders in your account and more.
+                                h2 = t('homepage.new_customer') 
+                                - if I18n.locale == 'en'
+                                  p By creating an account with our store, you will be able to move through the checkout process faster, store multiple shipping addresses, view and track your orders in your account and more.
+                                - else 
+                                  p Bằng cách tạo một tài khoản với cửa hàng của chúng tôi, bạn sẽ có thể thực hiện quá trình thanh toán nhanh hơn, xem và theo dõi đơn đặt hàng của bạn trong tài khoản của bạn và nhiều chức năng khác.
                                 .buttons-set
                                   button.button onclick="window.location.replace(window.location.origin + '/' + window.location.pathname.split('/')[1] + '/customer/sign_up/');" title=("Create an Account") type="button" 
                                     span
-                                      span Create an Account
+                                      span = t('homepage.create_an_account')
 
     .clear
 

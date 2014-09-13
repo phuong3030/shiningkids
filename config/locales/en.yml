@@ -10,6 +10,11 @@ en:
     subtotal: 'Cart Subtotal:'
     recent_item: 'Recently added item(s)'
     empty: 'You have no items in your shopping cart.'
+    contacts: 'Contacts'
+    login_create_account: 'Login or Create an Account'
+    registered_cus: 'REGISTERED CUSTOMER'
+    new_customer: 'NEW CUSTOMER'
+    create_an_acocunt: 'Create an Account'
   customer:
     dashboard: 'Account Dashboard'
     change_pass: 'Change Password'

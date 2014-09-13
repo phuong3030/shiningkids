@@ -5,65 +5,28 @@
         .footer-cols-wrapper
 
           .col-md-3.col-xs-12.footer-col
-            h4
-              | Information
-              span.toggle
-            .footer-col-content
-              ul
-                li
-                  a href="/about-us" 
-                    | About Us
-                li
-                  a href="/customer-service"  Customer Service
-                li
-                  a href="#" title=("Site Map")  Site Map
-                li
-                  a href="#" title=("Search Terms")  Search Terms
-                li.last
-                  a href="/contacts" title=("Contact Us")  Contact Us
 
           .col-md-3.col-xs-12.footer-col
-            h4
-              | Why buy from us
-              span.toggle
-            .footer-col-content
-              ul
-                li
-                  a href="#"  Shipping &amp; Returns
-                li
-                  a href="#"  Secure Shopping
-                li
-                  a href="#"  International Shipping
-                li
-                  a href="#"  Affiliates
-                li
-                  a href="#"  Group Sales
 
           .col-md-2.col-xs-12.footer-col
-            h4
-              | My account
-              span.toggle
+            h4 = t('homepage.my_account') 
             .footer-col-content
               ul
                 li
-                  a href="/customer/login/" 
-                    | Sign In
+                  = link_to t('homepage.login'), customer_session_path
                 li
-                  a href="/customer/cart/" 
-                    | View Cart
+                  = link_to t('customer.view_cart'), customer_view_carts_path
                 li
-                  a href="#"  Help
+                  = link_to t('customer.dashboard'), customer_path
 
           .col-md-4.col-xs-12.footer-col.contacts
-            h4
-              | Contacts
-              span.toggle
+            h4 = t('homepage.contacts') 
             .footer-col-content
               p
-                i.fa.fa-phone
+                i.fa.fa-map-marker
                 | Company Inc., 8901 Marmora Road,
                 | Glasgow, D04 89GR
               p.tel 
-                i.fa.fa-map-marker
-                | Call us now toll free: (800)2345-6789
+                i.fa.fa-phone
+                | Phone: (800)2345-6789
         .clear
