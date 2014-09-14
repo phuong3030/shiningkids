@@ -46,6 +46,6 @@ namespace :deploy do
     run "cd #{deploy_to}/current && bundle install"
   end
 end
-
-#before "deploy", "deploy:stop_server"
-after "deploy", "deploy:migrate" #, "deploy:start_server"
+#"deploy:migrate",
+before "deploy", "deploy:stop_server"
+after "deploy", "deploy:start_server"
