@@ -12,7 +12,7 @@ set :default_shell, '/bin/bash -l'
 set :rvm_ruby_string, 'ruby-2.1.2'
 
 set(:env, 'production') unless exists?(:env)
-set(:branch, 'feature-shopping-cart') unless exists?(:branch)
+set(:branch, 'master') unless exists?(:branch)
 
 set :use_sudo, false
 set :domain, '128.199.237.95'
