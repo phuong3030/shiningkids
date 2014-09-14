@@ -12,9 +12,13 @@
     br
       = f.text_field :name
   .field
+    = f.label :name_vi
+    br
+      = f.text_field :name_vi
+  .field
     = f.label :description
     br
-      = f.text_field :description
+      = f.text_area :description, :size => '50x10'
   .field
     = f.label :image
     br
