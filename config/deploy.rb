@@ -46,4 +46,4 @@ namespace :deploy do
 end
 
 #before "deploy", "deploy:stop_server"
-#after "deploy", "deploy:migrate", "deploy:start_server"
+after "deploy", "deploy:migrate" #, "deploy:start_server"
