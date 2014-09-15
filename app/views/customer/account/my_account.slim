@@ -48,7 +48,7 @@
                                           span.nobr = order.date
                                         td.order-ship = current_customer.firstname + current_customer.lastname
                                         td.order-total
-                                          span.price = order.product.price
+                                          span.price = order.product.price if order.product
                                         td.order-status
                                           em Pending
                                         td.last

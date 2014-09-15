@@ -14,7 +14,7 @@ vi:
     login_create_account: 'Đăng nhập hoặc tạo tài khoản mới'
     registered_cus: 'ĐÃ CÓ TÀI KHOẢN'
     new_customer: 'KHÁCH HÀNG MỚI'
-    create_an_acocunt: 'Tạo tài khoản mới'
+    create_an_account: 'Tạo tài khoản mới'
   customer:
     dashboard: 'Bảng Tin'
     change_pass: 'Đổi Mật Khẩu'
