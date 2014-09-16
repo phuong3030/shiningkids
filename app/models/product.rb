@@ -13,6 +13,22 @@ class Product < ActiveRecord::Base
     end
   end
 
+  def price
+    if I18n.locale == :en 
+      read_attribute :price
+    else
+      read_attribute('price_' + I18n.locale.to_s)
+    end
+  end
+
+  def saleoff
+    if I18n.locale == :en 
+      read_attribute :saleoff
+    else
+      read_attribute('saleoff_' + I18n.locale.to_s)
+    end
+  end
+
   def description
     if I18n.locale == :en 
       read_attribute :description

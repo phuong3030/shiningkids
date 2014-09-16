@@ -11,5 +11,12 @@ li.item.col-md-3.col-xs-12
     h3.product-name
       = link_to product.name, product_detail_path(product.id), :title => product.name
     .price-box
-      span#regular-price
-        span.price = product.price
+      - if product.saleoff > 0
+        span.old-price
+          span.price = product.price
+        | &nbsp;
+        span.special-price
+          span.price = product.price - product.saleoff
+      - else
+        span#regular-price
+          span.price = product.price
