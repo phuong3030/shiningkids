@@ -7,10 +7,18 @@ li.item
         = link_to product.name, product_detail_path(product), :title => product.name
       .desc.std
         p = product.description
+        | &nbsp;
         = link_to t("shopping.details"), product_detail_path(product), :class => 'link-learn', :title => product.name
       .price-box
-        span#product-price-1.regular-price
-          span.price = product.price
+        - if product.saleoff > 0
+          span.old-price
+            span.price = product.price
+          | &nbsp;
+          span.special-price
+            span.price = product.price - product.saleoff
+        - else
+          span#regular-price
+            span.price = product.price
       button.button.btn-cart title=("Add to Cart") type="button" data-id="#{product.id}" 
         span
           = content_tag :span, t("shopping.add_to_cart")

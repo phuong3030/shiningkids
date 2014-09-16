@@ -28,6 +28,7 @@
                   .padding-s
                     .page-title.category-title
                       h1 = @product.name
+                      h1 = @product.name_vi
 
                     p
                       strong Price:
@@ -38,6 +39,17 @@
                     p
                       strong Description:
                       = @product.description
+
+                    p
+                      strong Price:
+                      = @product.price_vi
+                    p
+                      strong Saleoff:
+                      = @product.saleoff_vi
+                    p
+                      strong Description:
+                      = @product.description_vi
+
                     = link_to 'Edit', edit_admin_category_product_path(@category, @product)
                     |- #{link_to 'Back', admin_category_products_path(@category) }
 
