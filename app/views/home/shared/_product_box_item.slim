@@ -13,10 +13,10 @@ li.item.col-md-3.col-xs-12
     .price-box
       - if product.saleoff > 0
         span.old-price
-          span.price = product.price
+          span.price = currency(product.price)
         | &nbsp;
         span.special-price
-          span.price = product.price - product.saleoff
+          span.price = currency(product.price - product.saleoff)
       - else
         span#regular-price
-          span.price = product.price
+          span.price = currency(product.price)

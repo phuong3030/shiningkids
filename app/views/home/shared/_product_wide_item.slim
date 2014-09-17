@@ -12,13 +12,13 @@ li.item
       .price-box
         - if product.saleoff > 0
           span.old-price
-            span.price = product.price
+            span.price = currency(product.price)
           | &nbsp;
           span.special-price
-            span.price = product.price - product.saleoff
+            span.price = currency(product.price - product.saleoff)
         - else
           span#regular-price
-            span.price = product.price
+            span.price = currency(product.price)
       button.button.btn-cart title=("Add to Cart") type="button" data-id="#{product.id}" 
         span
           = content_tag :span, t("shopping.add_to_cart")

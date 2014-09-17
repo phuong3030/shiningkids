@@ -49,8 +49,15 @@
                             | Availability:
                             span In stock
                           .price-box
-                            span#product-price-18.regular-price
-                              span.price = @product.price
+                            - if @product.saleoff > 0
+                              span.old-price
+                                span.price = currency(@product.price)
+                              | &nbsp;
+                              span.special-price
+                                span.price = currency(@product.price - @product.saleoff)
+                            - else
+                              span#regular-price
+                                span.price = currency(@product.price)                          
                           .clear
                           .product-options-bottom
                             .add-to-cart
