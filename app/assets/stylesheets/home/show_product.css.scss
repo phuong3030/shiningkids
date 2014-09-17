@@ -202,4 +202,31 @@
 .container-slider .jcarousel-control-next-disabled,
 .container-slider .jcarousel-control-prev-disabled  {opacity: 0.2;}
 
+/* Regular price */
+.regular-price { float:left; display:block; }
+.regular-price .price {
+  font-weight:normal;
+  font-size:17px;
+  line-height:22px;
+  color:#9d9999;
+}
 
+/* Old price */
+.old-price { display:inline; }
+.old-price .price-label { font-weight:bold; white-space:nowrap; display:none; }
+.old-price .price { font-size:17px; font-weight:normal; text-decoration:line-through; color:#adacac; }
+
+/* Special price */
+.special-price { display:inline; }
+.special-price .price-label { font-weight:bold; display:none; }
+.special-price .price { font-size:17px; font-weight:normal; color:#f27777; }
+
+/* Minimal price (as low as) */
+.minimal-price {}
+.minimal-price .price-label {font-weight:bold; white-space:nowrap;}
+
+.minimal-price-link {display:inline-block;color:#333333;margin-top:2px;}
+.minimal-price-link:hover { color:#000; }
+.minimal-price-link .label {}
+.minimal-price-link .price { font-weight:normal; }
+.minimal-price-link span {  display: inline-block;   text-decoration: none;}
